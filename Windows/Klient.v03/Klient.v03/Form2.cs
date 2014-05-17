@@ -30,7 +30,7 @@ namespace Klient.v03
         {
             using (var db = new ShopContext())
             {
-                foreach (var entry in db.Accounts)
+                foreach (var entry in db.Account)
                 {
                     if (entry.NazwaUzytkownika == textBox1.Text && entry.Haslo == maskedTextBox1.Text && entry.Uprawnienia == 3)
                         this.DialogResult = DialogResult.OK;

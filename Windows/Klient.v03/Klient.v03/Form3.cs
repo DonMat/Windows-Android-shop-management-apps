@@ -32,31 +32,31 @@ namespace Klient.v03
                     try
                     {
 
-                        Accounts account = new Accounts()
+                        Account account = new Account()
                         {
                             NazwaUzytkownika = this.textBox1.Text,
                             Haslo = this.textBox2.Text,
                             Uprawnienia = 3
                         };
-                        db.Accounts.Add(account);
+                        db.Account.Add(account);
                         db.SaveChanges();
 
 
-                        Customers customer = new Customers()
+                        Customer customer = new Customer()
                         {
-                            Id_konta = account.Id,
+                            KontoId = account.Id,
                             Imie = this.textBox4.Text,
                             Nazwisko = this.textBox5.Text,
                             Ulica = this.textBox6.Text,
-                            Nr_domu = this.textBox7.Text,
-                            Kod_pocztowy = this.textBox8.Text,
+                            NrDomu = this.textBox7.Text,
+                            KodPocztowy = this.textBox8.Text,
                             Miasto = this.textBox9.Text,
                             Mail = this.textBox10.Text,
                             Telefon = this.textBox11.Text,
                             Fax = this.textBox12.Text
 
                         };
-                        db.Customers.Add(customer);
+                        db.Customer.Add(customer);
                         db.SaveChanges();
                     }
                     catch

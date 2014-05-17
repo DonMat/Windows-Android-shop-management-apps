@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\ShopModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\ShopModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

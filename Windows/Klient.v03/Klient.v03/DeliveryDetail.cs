@@ -12,14 +12,15 @@ namespace Klient.v03
     using System;
     using System.Collections.Generic;
     
-    public partial class Vat
+    public partial class DeliveryDetail
     {
         public int Id { get; set; }
+        public int DostawaId { get; set; }
         public int ProduktId { get; set; }
-        public System.DateTime Od { get; set; }
-        public Nullable<System.DateTime> Do { get; set; }
-        public int WartoscVat { get; set; }
+        public double Netto { get; set; }
+        public int Sztuk { get; set; }
     
+        public virtual Delivery Delivery { get; set; }
         public virtual Product Product { get; set; }
     }
 }

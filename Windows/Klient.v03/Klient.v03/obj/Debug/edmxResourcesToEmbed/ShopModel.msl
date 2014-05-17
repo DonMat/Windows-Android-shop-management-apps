@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ShopModelStoreContainer" CdmEntityContainer="ShopContext">
-    <EntitySetMapping Name="Accounts">
-      <EntityTypeMapping TypeName="ShopModel.Accounts">
-        <MappingFragment StoreEntitySet="Accounts">
+    <EntitySetMapping Name="Account">
+      <EntityTypeMapping TypeName="ShopModel.Account">
+        <MappingFragment StoreEntitySet="Account">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Uprawnienia" ColumnName="Uprawnienia" />
           <ScalarProperty Name="NazwaUzytkownika" ColumnName="NazwaUzytkownika" />
@@ -19,87 +19,88 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Customers">
-      <EntityTypeMapping TypeName="ShopModel.Customers">
-        <MappingFragment StoreEntitySet="Customers">
+    <EntitySetMapping Name="Customer">
+      <EntityTypeMapping TypeName="ShopModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_konta" ColumnName="Id_konta" />
+          <ScalarProperty Name="KontoId" ColumnName="KontoId" />
           <ScalarProperty Name="Imie" ColumnName="Imie" />
           <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
           <ScalarProperty Name="Ulica" ColumnName="Ulica" />
-          <ScalarProperty Name="Nr_domu" ColumnName="Nr_domu" />
+          <ScalarProperty Name="NrDomu" ColumnName="NrDomu" />
           <ScalarProperty Name="Miasto" ColumnName="Miasto" />
-          <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
+          <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
           <ScalarProperty Name="Mail" ColumnName="Mail" />
           <ScalarProperty Name="Telefon" ColumnName="Telefon" />
           <ScalarProperty Name="Fax" ColumnName="Fax" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Deliveries">
-      <EntityTypeMapping TypeName="ShopModel.Deliveries">
-        <MappingFragment StoreEntitySet="Deliveries">
+    <EntitySetMapping Name="Delivery">
+      <EntityTypeMapping TypeName="ShopModel.Delivery">
+        <MappingFragment StoreEntitySet="Delivery">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_dostawcy" ColumnName="Id_dostawcy" />
+          <ScalarProperty Name="DostawcaId" ColumnName="DostawcaId" />
           <ScalarProperty Name="Data" ColumnName="Data" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Delivery_Details">
-      <EntityTypeMapping TypeName="ShopModel.Delivery_Details">
-        <MappingFragment StoreEntitySet="Delivery_Details">
+    <EntitySetMapping Name="DeliveryDetail">
+      <EntityTypeMapping TypeName="ShopModel.DeliveryDetail">
+        <MappingFragment StoreEntitySet="DeliveryDetail">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
-          <ScalarProperty Name="Id_produktu" ColumnName="Id_produktu" />
+          <ScalarProperty Name="DostawaId" ColumnName="DostawaId" />
+          <ScalarProperty Name="ProduktId" ColumnName="ProduktId" />
           <ScalarProperty Name="Netto" ColumnName="Netto" />
           <ScalarProperty Name="Sztuk" ColumnName="Sztuk" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Order_Details">
-      <EntityTypeMapping TypeName="ShopModel.Order_Details">
-        <MappingFragment StoreEntitySet="Order_Details">
-          <ScalarProperty Name="Zamowienie_id" ColumnName="Zamowienie_id" />
-          <ScalarProperty Name="Produkt_id" ColumnName="Produkt_id" />
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="ShopModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="DataZrealizowania" ColumnName="DataZrealizowania" />
+          <ScalarProperty Name="ZamowienieId" ColumnName="ZamowienieId" />
+          <ScalarProperty Name="DataZamowienia" ColumnName="DataZamowienia" />
+          <ScalarProperty Name="KlientId" ColumnName="KlientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetail">
+      <EntityTypeMapping TypeName="ShopModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetail">
+          <ScalarProperty Name="ZamowienieId" ColumnName="ZamowienieId" />
+          <ScalarProperty Name="ProduktId" ColumnName="ProduktId" />
           <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
-          <ScalarProperty Name="Miasto_dostawy" ColumnName="Miasto_dostawy" />
-          <ScalarProperty Name="Adres_dostawy" ColumnName="Adres_dostawy" />
-          <ScalarProperty Name="Kod_pocztowy_dostawy" ColumnName="Kod_pocztowy_dostawy" />
+          <ScalarProperty Name="MiastoDostawy" ColumnName="MiastoDostawy" />
+          <ScalarProperty Name="AdresDostawy" ColumnName="AdresDostawy" />
+          <ScalarProperty Name="KodPocztowyDostawy" ColumnName="KodPocztowyDostawy" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Orders">
-      <EntityTypeMapping TypeName="ShopModel.Orders">
-        <MappingFragment StoreEntitySet="Orders">
-          <ScalarProperty Name="Zamowienie_id" ColumnName="Zamowienie_id" />
-          <ScalarProperty Name="Data_zamowienia" ColumnName="Data_zamowienia" />
-          <ScalarProperty Name="Id_klienta" ColumnName="Id_klienta" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Prices">
-      <EntityTypeMapping TypeName="ShopModel.Prices">
-        <MappingFragment StoreEntitySet="Prices">
-          <ScalarProperty Name="Cena_id" ColumnName="Cena_id" />
-          <ScalarProperty Name="Id_produktu" ColumnName="Id_produktu" />
+    <EntitySetMapping Name="Price">
+      <EntityTypeMapping TypeName="ShopModel.Price">
+        <MappingFragment StoreEntitySet="Price">
+          <ScalarProperty Name="CenaId" ColumnName="CenaId" />
+          <ScalarProperty Name="ProduktId" ColumnName="ProduktId" />
           <ScalarProperty Name="Od" ColumnName="Od" />
           <ScalarProperty Name="Do" ColumnName="Do" />
           <ScalarProperty Name="Cena" ColumnName="Cena" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="ShopModel.Products">
-        <MappingFragment StoreEntitySet="Products">
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="ShopModel.Product">
+        <MappingFragment StoreEntitySet="Product">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
-          <ScalarProperty Name="Kategoria_id" ColumnName="Kategoria_id" />
+          <ScalarProperty Name="KategoriaId" ColumnName="KategoriaId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Providers">
-      <EntityTypeMapping TypeName="ShopModel.Providers">
-        <MappingFragment StoreEntitySet="Providers">
+    <EntitySetMapping Name="Provider">
+      <EntityTypeMapping TypeName="ShopModel.Provider">
+        <MappingFragment StoreEntitySet="Provider">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
           <ScalarProperty Name="Adres" ColumnName="Adres" />
@@ -109,9 +110,9 @@
     <EntitySetMapping Name="Store">
       <EntityTypeMapping TypeName="ShopModel.Store">
         <MappingFragment StoreEntitySet="Store">
-          <ScalarProperty Name="Produkt_id" ColumnName="Produkt_id" />
-          <ScalarProperty Name="Ilosc_dostepnych" ColumnName="Ilosc_dostepnych" />
-          <ScalarProperty Name="Ilosc_zamowionych" ColumnName="Ilosc_zamowionych" />
+          <ScalarProperty Name="ProduktId" ColumnName="ProduktId" />
+          <ScalarProperty Name="IloscDostepnych" ColumnName="IloscDostepnych" />
+          <ScalarProperty Name="IloscZamowionych" ColumnName="IloscZamowionych" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -119,10 +120,10 @@
       <EntityTypeMapping TypeName="ShopModel.Vat">
         <MappingFragment StoreEntitySet="Vat">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_produktu" ColumnName="Id_produktu" />
+          <ScalarProperty Name="ProduktId" ColumnName="ProduktId" />
           <ScalarProperty Name="Od" ColumnName="Od" />
           <ScalarProperty Name="Do" ColumnName="Do" />
-          <ScalarProperty Name="Wartosc_vat" ColumnName="Wartosc_vat" />
+          <ScalarProperty Name="WartoscVat" ColumnName="WartoscVat" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -12,14 +12,17 @@ namespace Klient.v03
     using System;
     using System.Collections.Generic;
     
-    public partial class Vat
+    public partial class Provider
     {
-        public int Id { get; set; }
-        public int ProduktId { get; set; }
-        public System.DateTime Od { get; set; }
-        public Nullable<System.DateTime> Do { get; set; }
-        public int WartoscVat { get; set; }
+        public Provider()
+        {
+            this.Delivery = new HashSet<Delivery>();
+        }
     
-        public virtual Product Product { get; set; }
+        public int Id { get; set; }
+        public string Nazwa { get; set; }
+        public string Adres { get; set; }
+    
+        public virtual ICollection<Delivery> Delivery { get; set; }
     }
 }

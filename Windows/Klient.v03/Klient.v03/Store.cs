@@ -14,10 +14,10 @@ namespace Klient.v03
     
     public partial class Store
     {
-        public int Produkt_id { get; set; }
-        public int Ilosc_dostepnych { get; set; }
-        public int Ilosc_zamowionych { get; set; }
+        public int ProduktId { get; set; }
+        public int IloscDostepnych { get; set; }
+        public int IloscZamowionych { get; set; }
     
-        public virtual Products Products { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

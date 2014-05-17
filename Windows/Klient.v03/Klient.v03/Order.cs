@@ -12,14 +12,19 @@ namespace Klient.v03
     using System;
     using System.Collections.Generic;
     
-    public partial class Vat
+    public partial class Order
     {
-        public int Id { get; set; }
-        public int ProduktId { get; set; }
-        public System.DateTime Od { get; set; }
-        public Nullable<System.DateTime> Do { get; set; }
-        public int WartoscVat { get; set; }
+        public Order()
+        {
+            this.OrderDetail = new HashSet<OrderDetail>();
+        }
     
-        public virtual Product Product { get; set; }
+        public int ZamowienieId { get; set; }
+        public System.DateTime DataZamowienia { get; set; }
+        public int KlientId { get; set; }
+        public Nullable<System.DateTime> DataZrealizowania { get; set; }
+    
+        public virtual Customer Customer { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
     }
 }

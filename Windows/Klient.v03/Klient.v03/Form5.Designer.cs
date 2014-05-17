@@ -55,6 +55,7 @@
             this.button2.TabIndex = 23;
             this.button2.Text = "Anuluj";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -71,7 +72,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 21;
-            this.textBox4.Text = "0";
             // 
             // button1
             // 
@@ -80,8 +80,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 20;
-            this.button1.Text = "Dodaj";
+            this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -199,6 +200,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form5";
             this.Text = "Edycja produktu";
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

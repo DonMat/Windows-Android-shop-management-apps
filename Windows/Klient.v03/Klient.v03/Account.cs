@@ -12,14 +12,18 @@ namespace Klient.v03
     using System;
     using System.Collections.Generic;
     
-    public partial class Vat
+    public partial class Account
     {
-        public int Id { get; set; }
-        public int ProduktId { get; set; }
-        public System.DateTime Od { get; set; }
-        public Nullable<System.DateTime> Do { get; set; }
-        public int WartoscVat { get; set; }
+        public Account()
+        {
+            this.Customer = new HashSet<Customer>();
+        }
     
-        public virtual Product Product { get; set; }
+        public int Id { get; set; }
+        public int Uprawnienia { get; set; }
+        public string NazwaUzytkownika { get; set; }
+        public string Haslo { get; set; }
+    
+        public virtual ICollection<Customer> Customer { get; set; }
     }
 }

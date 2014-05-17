@@ -16,12 +16,12 @@ namespace Klient.v03
     {
         public Category()
         {
-            this.Products = new HashSet<Products>();
+            this.Product = new HashSet<Product>();
         }
     
         public int Id { get; set; }
         public string Nazwa { get; set; }
     
-        public virtual ICollection<Products> Products { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

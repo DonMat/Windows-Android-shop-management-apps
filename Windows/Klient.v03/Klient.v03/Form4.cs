@@ -12,6 +12,7 @@ namespace Klient.v03
 {
     public partial class Form4 : Form
     {
+        public DataGridView datagrid;
         private void FillCategories()
         {
             using (var db = new ShopContext())
@@ -25,25 +26,26 @@ namespace Klient.v03
             }
         }
 
-        public Form4()
+        public Form4(DataGridView _datagrid)
         {
+            datagrid = _datagrid;
             InitializeComponent();
             FillCategories();
         }
 
-        public int InsertNewProduct(string _Nazwa, int _Kategoria_id)
+        public int InsertNewProduct(string _Nazwa, int _KategoriaId)
         {
             using (var db = new ShopContext())
             {
                 try
                 {
-                    Products ProductToInsert = new Products()
+                    Product ProductToInsert = new Product()
                     {
                         Nazwa = _Nazwa,
-                        Kategoria_id = _Kategoria_id
+                        KategoriaId = _KategoriaId
                     };
 
-                    db.Products.Add(ProductToInsert);
+                    db.Product.Add(ProductToInsert);
                     db.SaveChanges();
                     return ProductToInsert.Id;
                 }
@@ -54,21 +56,21 @@ namespace Klient.v03
             }
         }
 
-        public bool InsertNewPrice(int _Id_produktu, DateTime _Od, DateTime _Do, double _Cena)
+        public bool InsertNewPrice(int _ProduktId, DateTime _Od, DateTime _Do, double _Cena)
         {
             using (var db = new ShopContext())
             {
                 try
                 {
-                    Prices PriceToInsert = new Prices()
+                    Price PriceToInsert = new Price()
                     {
-                        Id_produktu = _Id_produktu,
+                        ProduktId = _ProduktId,
                         Od = _Od,
                         Do = _Do,
                         Cena = _Cena
                     };
 
-                    db.Prices.Add(PriceToInsert);
+                    db.Price.Add(PriceToInsert);
                     db.SaveChanges();
                     return true;
                 }
@@ -79,20 +81,20 @@ namespace Klient.v03
             }
         }
 
-        public bool InsertNewPrice(int _Id_produktu, DateTime _Od, double _Cena)
+        public bool InsertNewPrice(int _ProduktId, DateTime _Od, double _Cena)
         {
             using (var db = new ShopContext())
             {
                 try
                 {
-                    Prices PriceToInsert = new Prices()
+                    Price PriceToInsert = new Price()
                     {
-                        Id_produktu = _Id_produktu,
+                        ProduktId = _ProduktId,
                         Od = _Od,
                         Cena = _Cena
                     };
 
-                    db.Prices.Add(PriceToInsert);
+                    db.Price.Add(PriceToInsert);
                     db.SaveChanges();
                     return true;
                 }
@@ -103,7 +105,7 @@ namespace Klient.v03
             }
         }
 
-        public bool InsertNewVat(int _Id_produktu, DateTime _Od, DateTime _Do, int _Wartosc_vat)
+        public bool InsertNewVat(int _ProduktId, DateTime _Od, DateTime _Do, int _WartoscVat)
         {
             using (var db = new ShopContext())
             {
@@ -111,10 +113,10 @@ namespace Klient.v03
                 {
                     Vat VatToInsert = new Vat()
                     {
-                        Id_produktu = _Id_produktu,
+                        ProduktId = _ProduktId,
                         Od = _Od,
                         Do = _Do,
-                        Wartosc_vat = _Wartosc_vat
+                        WartoscVat = _WartoscVat
                     };
 
                     db.Vat.Add(VatToInsert);
@@ -128,7 +130,7 @@ namespace Klient.v03
             }
         }
 
-        public bool InsertNewVat(int _Id_produktu, DateTime _Od, int _Wartosc_vat)
+        public bool InsertNewVat(int _ProduktId, DateTime _Od, int _WartoscVat)
         {
             using (var db = new ShopContext())
             {
@@ -136,9 +138,9 @@ namespace Klient.v03
                 {
                     Vat VatToInsert = new Vat()
                     {
-                        Id_produktu = _Id_produktu,
+                        ProduktId = _ProduktId,
                         Od = _Od,
-                        Wartosc_vat = _Wartosc_vat
+                        WartoscVat = _WartoscVat
                     };
 
                     db.Vat.Add(VatToInsert);
@@ -152,7 +154,7 @@ namespace Klient.v03
             }
         }
 
-        public bool InsertNewStore(int _Produkt_id, int _Ilosc_dostepnych, int _Ilosc_zamowionych)
+        public bool InsertNewStore(int _ProduktId, int _IloscDostepnych, int _IloscZamowionych)
         {
             using (var db = new ShopContext())
             {
@@ -160,9 +162,9 @@ namespace Klient.v03
                 {
                     Store StoreToInsert = new Store()
                     {
-                        Produkt_id = _Produkt_id,
-                        Ilosc_dostepnych = _Ilosc_dostepnych,
-                        Ilosc_zamowionych = _Ilosc_zamowionych
+                        ProduktId = _ProduktId,
+                        IloscDostepnych = _IloscDostepnych,
+                        IloscZamowionych = _IloscZamowionych
                     };
 
                     db.Store.Add(StoreToInsert);
@@ -187,6 +189,14 @@ namespace Klient.v03
                 InsertNewVat(productId, DateTime.Now, vat);
                 int availble = Convert.ToInt32(textBox4.Text);
                 InsertNewStore(productId, availble, 0);
+                datagrid.Rows.Add(productId, textBox1.Text,
+                    (string)dataGridView1.CurrentRow.Cells[1].Value,
+                    price, vat, availble, 0);
+                if(datagrid.SortOrder==SortOrder.Ascending)
+                    datagrid.Sort(datagrid.SortedColumn, ListSortDirection.Ascending);
+                else
+                    datagrid.Sort(datagrid.SortedColumn, ListSortDirection.Descending);
+                this.Close();
             }
             else
             {
