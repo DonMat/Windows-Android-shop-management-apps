@@ -1,0 +1,875 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ShopModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uprawnienia" Type="int" Nullable="false" />
+          <Property Name="NazwaUzytkownika" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Haslo" Type="varchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="char" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_konta" Type="int" Nullable="false" />
+          <Property Name="Imie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nazwisko" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ulica" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nr_domu" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Miasto" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Kod_pocztowy" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="Mail" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Telefon" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fax" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Deliveries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_dostawcy" Type="int" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Delivery_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_dostawy" Type="int" Nullable="false" />
+          <Property Name="Id_produktu" Type="int" Nullable="false" />
+          <Property Name="Netto" Type="double" Nullable="false" />
+          <Property Name="Sztuk" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order_Details">
+          <Key>
+            <PropertyRef Name="Zamowienie_id" />
+            <PropertyRef Name="Produkt_id" />
+          </Key>
+          <Property Name="Zamowienie_id" Type="int" Nullable="false" />
+          <Property Name="Produkt_id" Type="int" Nullable="false" />
+          <Property Name="Ilosc" Type="int" Nullable="false" />
+          <Property Name="Miasto_dostawy" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Adres_dostawy" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Kod_pocztowy_dostawy" Type="varchar" MaxLength="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Zamowienie_id" />
+          </Key>
+          <Property Name="Zamowienie_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Data_zamowienia" Type="date" Nullable="false" />
+          <Property Name="Id_klienta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prices">
+          <Key>
+            <PropertyRef Name="Cena_id" />
+          </Key>
+          <Property Name="Cena_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_produktu" Type="int" Nullable="false" />
+          <Property Name="Od" Type="date" Nullable="false" />
+          <Property Name="Do" Type="date" />
+          <Property Name="Cena" Type="double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="Kategoria_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Providers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adres" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="Produkt_id" />
+          </Key>
+          <Property Name="Produkt_id" Type="int" Nullable="false" />
+          <Property Name="Ilosc_dostepnych" Type="int" Nullable="false" />
+          <Property Name="Ilosc_zamowionych" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_produktu" Type="int" Nullable="false" />
+          <Property Name="Od" Type="date" Nullable="false" />
+          <Property Name="Do" Type="date" />
+          <Property Name="Wartosc_vat" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="Customers_ibfk_1">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="Id_konta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Deliveries_ibfk_1">
+          <End Role="Providers" Type="Self.Providers" Multiplicity="1" />
+          <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Providers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Deliveries">
+              <PropertyRef Name="Id_dostawcy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Deliveries_ibfk_3">
+          <End Role="Providers" Type="Self.Providers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Providers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Deliveries">
+              <PropertyRef Name="Id_dostawcy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Delivery_Details_ibfk_1">
+          <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Delivery_Details" Type="Self.Delivery_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deliveries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Delivery_Details">
+              <PropertyRef Name="Id_dostawy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Delivery_Details_ibfk_2">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Delivery_Details" Type="Self.Delivery_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Delivery_Details">
+              <PropertyRef Name="Id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Details_ibfk_2">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Zamowienie_id" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="Zamowienie_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Details_ibfk_3">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="Produkt_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Orders_ibfk_2">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Id_klienta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Prices_ibfk_1">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Prices" Type="Self.Prices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prices">
+              <PropertyRef Name="Id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Products_ibfk_3">
+          <End Role="Category" Type="Self.Category" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="Kategoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Store_ibfk_1">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="Produkt_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Vat_ibfk_1">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Vat" Type="Self.Vat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vat">
+              <PropertyRef Name="Id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ShopModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Deliveries" EntityType="Self.Deliveries" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Delivery_Details" EntityType="Self.Delivery_Details" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Order_Details" EntityType="Self.Order_Details" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Prices" EntityType="Self.Prices" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Providers" EntityType="Self.Providers" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Vat" EntityType="Self.Vat" Schema="chmielek_sklep" store:Type="Tables" />
+          <AssociationSet Name="Customers_ibfk_1" Association="Self.Customers_ibfk_1">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="Deliveries_ibfk_1" Association="Self.Deliveries_ibfk_1">
+            <End Role="Providers" EntitySet="Providers" />
+            <End Role="Deliveries" EntitySet="Deliveries" />
+          </AssociationSet>
+          <AssociationSet Name="Deliveries_ibfk_3" Association="Self.Deliveries_ibfk_3">
+            <End Role="Providers" EntitySet="Providers" />
+            <End Role="Deliveries" EntitySet="Deliveries" />
+          </AssociationSet>
+          <AssociationSet Name="Delivery_Details_ibfk_1" Association="Self.Delivery_Details_ibfk_1">
+            <End Role="Deliveries" EntitySet="Deliveries" />
+            <End Role="Delivery_Details" EntitySet="Delivery_Details" />
+          </AssociationSet>
+          <AssociationSet Name="Delivery_Details_ibfk_2" Association="Self.Delivery_Details_ibfk_2">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Delivery_Details" EntitySet="Delivery_Details" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Details_ibfk_2" Association="Self.Order_Details_ibfk_2">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Details_ibfk_3" Association="Self.Order_Details_ibfk_3">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="Orders_ibfk_2" Association="Self.Orders_ibfk_2">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Prices_ibfk_1" Association="Self.Prices_ibfk_1">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Prices" EntitySet="Prices" />
+          </AssociationSet>
+          <AssociationSet Name="Products_ibfk_3" Association="Self.Products_ibfk_3">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="Store_ibfk_1" Association="Self.Store_ibfk_1">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="Vat_ibfk_1" Association="Self.Vat_ibfk_1">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Vat" EntitySet="Vat" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uprawnienia" Type="Int32" Nullable="false" />
+          <Property Name="NazwaUzytkownika" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Customers" Relationship="Self.Customers_ibfk_1" FromRole="Accounts" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.Products_ibfk_3" FromRole="Category" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_konta" Type="Int32" Nullable="false" />
+          <Property Name="Imie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ulica" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nr_domu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Miasto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kod_pocztowy" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Accounts" Relationship="Self.Customers_ibfk_1" FromRole="Customers" ToRole="Accounts" />
+          <NavigationProperty Name="Orders" Relationship="Self.Orders_ibfk_2" FromRole="Customers" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Deliveries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_dostawcy" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Providers" Relationship="Self.Deliveries_ibfk_1" FromRole="Deliveries" ToRole="Providers" />
+          <NavigationProperty Name="Providers1" Relationship="Self.Deliveries_ibfk_3" FromRole="Deliveries" ToRole="Providers" />
+          <NavigationProperty Name="Delivery_Details" Relationship="Self.Delivery_Details_ibfk_1" FromRole="Deliveries" ToRole="Delivery_Details" />
+        </EntityType>
+        <EntityType Name="Delivery_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_dostawy" Type="Int32" Nullable="false" />
+          <Property Name="Id_produktu" Type="Int32" Nullable="false" />
+          <Property Name="Netto" Type="Double" Nullable="false" />
+          <Property Name="Sztuk" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Deliveries" Relationship="Self.Delivery_Details_ibfk_1" FromRole="Delivery_Details" ToRole="Deliveries" />
+          <NavigationProperty Name="Products" Relationship="Self.Delivery_Details_ibfk_2" FromRole="Delivery_Details" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Order_Details">
+          <Key>
+            <PropertyRef Name="Zamowienie_id" />
+            <PropertyRef Name="Produkt_id" />
+          </Key>
+          <Property Name="Zamowienie_id" Type="Int32" Nullable="false" />
+          <Property Name="Produkt_id" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc" Type="Int32" Nullable="false" />
+          <Property Name="Miasto_dostawy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adres_dostawy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kod_pocztowy_dostawy" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.Order_Details_ibfk_2" FromRole="Order_Details" ToRole="Orders" />
+          <NavigationProperty Name="Products" Relationship="Self.Order_Details_ibfk_3" FromRole="Order_Details" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Zamowienie_id" />
+          </Key>
+          <Property Name="Zamowienie_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data_zamowienia" Type="DateTime" Nullable="false" />
+          <Property Name="Id_klienta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customers" Relationship="Self.Orders_ibfk_2" FromRole="Orders" ToRole="Customers" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.Order_Details_ibfk_2" FromRole="Orders" ToRole="Order_Details" />
+        </EntityType>
+        <EntityType Name="Prices">
+          <Key>
+            <PropertyRef Name="Cena_id" />
+          </Key>
+          <Property Name="Cena_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_produktu" Type="Int32" Nullable="false" />
+          <Property Name="Od" Type="DateTime" Nullable="false" />
+          <Property Name="Do" Type="DateTime" />
+          <Property Name="Cena" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.Prices_ibfk_1" FromRole="Prices" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kategoria_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.Products_ibfk_3" FromRole="Products" ToRole="Category" />
+          <NavigationProperty Name="Delivery_Details" Relationship="Self.Delivery_Details_ibfk_2" FromRole="Products" ToRole="Delivery_Details" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.Order_Details_ibfk_3" FromRole="Products" ToRole="Order_Details" />
+          <NavigationProperty Name="Prices" Relationship="Self.Prices_ibfk_1" FromRole="Products" ToRole="Prices" />
+          <NavigationProperty Name="Store" Relationship="Self.Store_ibfk_1" FromRole="Products" ToRole="Store" />
+          <NavigationProperty Name="Vat" Relationship="Self.Vat_ibfk_1" FromRole="Products" ToRole="Vat" />
+        </EntityType>
+        <EntityType Name="Providers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Deliveries" Relationship="Self.Deliveries_ibfk_1" FromRole="Providers" ToRole="Deliveries" />
+          <NavigationProperty Name="Deliveries1" Relationship="Self.Deliveries_ibfk_3" FromRole="Providers" ToRole="Deliveries" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="Produkt_id" />
+          </Key>
+          <Property Name="Produkt_id" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc_dostepnych" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc_zamowionych" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.Store_ibfk_1" FromRole="Store" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Vat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_produktu" Type="Int32" Nullable="false" />
+          <Property Name="Od" Type="DateTime" Nullable="false" />
+          <Property Name="Do" Type="DateTime" />
+          <Property Name="Wartosc_vat" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.Vat_ibfk_1" FromRole="Vat" ToRole="Products" />
+        </EntityType>
+        <Association Name="Customers_ibfk_1">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="Id_konta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Products_ibfk_3">
+          <End Role="Category" Type="Self.Category" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="Kategoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Orders_ibfk_2">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Id_klienta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Deliveries_ibfk_1">
+          <End Role="Providers" Type="Self.Providers" Multiplicity="1" />
+          <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Providers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Deliveries">
+              <PropertyRef Name="Id_dostawcy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Deliveries_ibfk_3">
+          <End Role="Providers" Type="Self.Providers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Providers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Deliveries">
+              <PropertyRef Name="Id_dostawcy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Delivery_Details_ibfk_1">
+          <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Delivery_Details" Type="Self.Delivery_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deliveries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Delivery_Details">
+              <PropertyRef Name="Id_dostawy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Delivery_Details_ibfk_2">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Delivery_Details" Type="Self.Delivery_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Delivery_Details">
+              <PropertyRef Name="Id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Details_ibfk_2">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Zamowienie_id" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="Zamowienie_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Details_ibfk_3">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="Produkt_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Prices_ibfk_1">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Prices" Type="Self.Prices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prices">
+              <PropertyRef Name="Id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Store_ibfk_1">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="Produkt_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Vat_ibfk_1">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Vat" Type="Self.Vat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vat">
+              <PropertyRef Name="Id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ShopContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" />
+          <EntitySet Name="Category" EntityType="Self.Category" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" />
+          <EntitySet Name="Deliveries" EntityType="Self.Deliveries" />
+          <EntitySet Name="Delivery_Details" EntityType="Self.Delivery_Details" />
+          <EntitySet Name="Order_Details" EntityType="Self.Order_Details" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" />
+          <EntitySet Name="Prices" EntityType="Self.Prices" />
+          <EntitySet Name="Products" EntityType="Self.Products" />
+          <EntitySet Name="Providers" EntityType="Self.Providers" />
+          <EntitySet Name="Store" EntityType="Self.Store" />
+          <EntitySet Name="Vat" EntityType="Self.Vat" />
+          <AssociationSet Name="Customers_ibfk_1" Association="Self.Customers_ibfk_1">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="Products_ibfk_3" Association="Self.Products_ibfk_3">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="Orders_ibfk_2" Association="Self.Orders_ibfk_2">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Deliveries_ibfk_1" Association="Self.Deliveries_ibfk_1">
+            <End Role="Providers" EntitySet="Providers" />
+            <End Role="Deliveries" EntitySet="Deliveries" />
+          </AssociationSet>
+          <AssociationSet Name="Deliveries_ibfk_3" Association="Self.Deliveries_ibfk_3">
+            <End Role="Providers" EntitySet="Providers" />
+            <End Role="Deliveries" EntitySet="Deliveries" />
+          </AssociationSet>
+          <AssociationSet Name="Delivery_Details_ibfk_1" Association="Self.Delivery_Details_ibfk_1">
+            <End Role="Deliveries" EntitySet="Deliveries" />
+            <End Role="Delivery_Details" EntitySet="Delivery_Details" />
+          </AssociationSet>
+          <AssociationSet Name="Delivery_Details_ibfk_2" Association="Self.Delivery_Details_ibfk_2">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Delivery_Details" EntitySet="Delivery_Details" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Details_ibfk_2" Association="Self.Order_Details_ibfk_2">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Details_ibfk_3" Association="Self.Order_Details_ibfk_3">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="Prices_ibfk_1" Association="Self.Prices_ibfk_1">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Prices" EntitySet="Prices" />
+          </AssociationSet>
+          <AssociationSet Name="Store_ibfk_1" Association="Self.Store_ibfk_1">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="Vat_ibfk_1" Association="Self.Vat_ibfk_1">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Vat" EntitySet="Vat" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ShopModelStoreContainer" CdmEntityContainer="ShopContext">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="ShopModel.Accounts">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Uprawnienia" ColumnName="Uprawnienia" />
+                <ScalarProperty Name="NazwaUzytkownika" ColumnName="NazwaUzytkownika" />
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="ShopModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="ShopModel.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_konta" ColumnName="Id_konta" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Nr_domu" ColumnName="Nr_domu" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deliveries">
+            <EntityTypeMapping TypeName="ShopModel.Deliveries">
+              <MappingFragment StoreEntitySet="Deliveries">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_dostawcy" ColumnName="Id_dostawcy" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Delivery_Details">
+            <EntityTypeMapping TypeName="ShopModel.Delivery_Details">
+              <MappingFragment StoreEntitySet="Delivery_Details">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
+                <ScalarProperty Name="Id_produktu" ColumnName="Id_produktu" />
+                <ScalarProperty Name="Netto" ColumnName="Netto" />
+                <ScalarProperty Name="Sztuk" ColumnName="Sztuk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Details">
+            <EntityTypeMapping TypeName="ShopModel.Order_Details">
+              <MappingFragment StoreEntitySet="Order_Details">
+                <ScalarProperty Name="Zamowienie_id" ColumnName="Zamowienie_id" />
+                <ScalarProperty Name="Produkt_id" ColumnName="Produkt_id" />
+                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+                <ScalarProperty Name="Miasto_dostawy" ColumnName="Miasto_dostawy" />
+                <ScalarProperty Name="Adres_dostawy" ColumnName="Adres_dostawy" />
+                <ScalarProperty Name="Kod_pocztowy_dostawy" ColumnName="Kod_pocztowy_dostawy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="ShopModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Zamowienie_id" ColumnName="Zamowienie_id" />
+                <ScalarProperty Name="Data_zamowienia" ColumnName="Data_zamowienia" />
+                <ScalarProperty Name="Id_klienta" ColumnName="Id_klienta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prices">
+            <EntityTypeMapping TypeName="ShopModel.Prices">
+              <MappingFragment StoreEntitySet="Prices">
+                <ScalarProperty Name="Cena_id" ColumnName="Cena_id" />
+                <ScalarProperty Name="Id_produktu" ColumnName="Id_produktu" />
+                <ScalarProperty Name="Od" ColumnName="Od" />
+                <ScalarProperty Name="Do" ColumnName="Do" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="ShopModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Kategoria_id" ColumnName="Kategoria_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Providers">
+            <EntityTypeMapping TypeName="ShopModel.Providers">
+              <MappingFragment StoreEntitySet="Providers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Store">
+            <EntityTypeMapping TypeName="ShopModel.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="Produkt_id" ColumnName="Produkt_id" />
+                <ScalarProperty Name="Ilosc_dostepnych" ColumnName="Ilosc_dostepnych" />
+                <ScalarProperty Name="Ilosc_zamowionych" ColumnName="Ilosc_zamowionych" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vat">
+            <EntityTypeMapping TypeName="ShopModel.Vat">
+              <MappingFragment StoreEntitySet="Vat">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_produktu" ColumnName="Id_produktu" />
+                <ScalarProperty Name="Od" ColumnName="Od" />
+                <ScalarProperty Name="Do" ColumnName="Do" />
+                <ScalarProperty Name="Wartosc_vat" ColumnName="Wartosc_vat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

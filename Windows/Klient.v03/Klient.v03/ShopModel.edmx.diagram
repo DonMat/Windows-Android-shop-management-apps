@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="190238436cc345ebbc6ccfc3de16fd3d" Name="Diagram1">
+        <EntityTypeShape EntityType="ShopModel.Accounts" Width="1.5" PointX="1.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Category" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Customers" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Deliveries" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Delivery_Details" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Order_Details" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Orders" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Prices" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Products" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Providers" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Store" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Vat" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <AssociationConnector Association="ShopModel.Customers_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Products_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Orders_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Deliveries_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Deliveries_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Delivery_Details_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Delivery_Details_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Order_Details_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Order_Details_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Prices_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Store_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.Vat_ibfk_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
