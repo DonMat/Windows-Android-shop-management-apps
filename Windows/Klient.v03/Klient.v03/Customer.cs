@@ -33,5 +33,16 @@ namespace Klient.v03
     
         public virtual Account Account { get; set; }
         public virtual ICollection<Order> Order { get; set; }
+
+        public OrderDetail OrderDetail
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }

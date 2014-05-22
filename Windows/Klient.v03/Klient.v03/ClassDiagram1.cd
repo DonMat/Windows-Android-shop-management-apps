@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Klient.v03.MainWindow">
+    <Position X="18" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAQAAIALIAQACEAAKBAAgCAPy7ZxACwHAPACAFJBE=</HashCode>
+      <FileName>MainWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.LoginWindow">
+    <Position X="15.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAAKAAAACBAAQAAAAEGAAAAAAAAA=</HashCode>
+      <FileName>LoginWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.RegisterWindow">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ciAAAAAAASAAABCAEACAAABCIAAIAAAAMGAAAAAAAIA=</HashCode>
+      <FileName>RegisterWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.AddingWindow">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEAAAAACAAABAAAAGAAIBCIAg4CAAAEGAAAAQAAAA=</HashCode>
+      <FileName>AddingWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.EditingWindow">
+    <Position X="13" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAGAIAhAAACGAAABCIAg4AEAAEGBAAAAAAAA=</HashCode>
+      <FileName>EditingWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.ConfirmWindow">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAYAAAAAGAAAAAAAAA=</HashCode>
+      <FileName>ConfirmWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.Program">
+    <Position X="0.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LoginWindow" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Klient.v03.ShopContext">
+    <Position X="8.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMCAAAAAQCEAAAAABAAAAAAEAAAAAAAAAAAAQAACEg=</HashCode>
+      <FileName>ShopModel.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.Account">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAACAAAEAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAA=</HashCode>
+      <FileName>Account.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Customer1" />
+      <Property Name="LoginWindow" />
+      <Property Name="Provider" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Klient.v03.Category">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EditingWindow" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Klient.v03.Customer">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIECAAAAgIgAAAAAABAAAAAAAAAAAggIAAAABQABAEA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OrderDetail" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Klient.v03.Delivery">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAEAAAAEAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Delivery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.DeliveryDetail">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAAAAAAAEAAAAAIAAEBAAAAAAAAAAAg=</HashCode>
+      <FileName>DeliveryDetail.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Delivery1" />
+      <Property Name="Product1" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Klient.v03.Order">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEgAAAAAAAABAAAAJAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Customer1" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Klient.v03.OrderDetail">
+    <Position X="6" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAECAAAAQAAAAAACAIAAAAAAAAAAABAACAAAAAEAAAA=</HashCode>
+      <FileName>OrderDetail.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Order1" />
+      <Property Name="ShopContext" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Klient.v03.Price">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIACAAAAQAAAAAAAAAAAEgAACgAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Price.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product1" />
+      <Property Name="ShopContext" />
+      <Property Name="EditingWindow" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Klient.v03.Product">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <AssociationLine Name="ShopContext" Type="Klient.v03.ShopContext" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.812" Y="0.5" />
+        <Point X="10.812" Y="0.125" />
+        <Point X="11.875" Y="0.125" />
+        <Point X="11.875" Y="11.117" />
+        <Point X="11.318" Y="11.117" Type="JumpStart" />
+        <Point X="11.151" Y="11.117" Type="JumpEnd" />
+        <Point X="10.99" Y="11.117" Type="JumpStart" />
+        <Point X="10.823" Y="11.117" Type="JumpEnd" />
+        <Point X="10.661" Y="11.117" Type="JumpStart" />
+        <Point X="10.495" Y="11.117" Type="JumpEnd" />
+        <Point X="8.375" Y="11.117" />
+        <Point X="8.375" Y="8.438" />
+        <Point X="8.75" Y="8.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAICAAAAQQCAAAAAABAAAAAAAgAAAEAAAAAgAQAASAA=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Store1" />
+      <Property Name="Vat1" />
+      <Property Name="ShopContext" />
+      <Property Name="EditingWindow" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Klient.v03.Provider">
+    <Position X="2.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAg=</HashCode>
+      <FileName>Provider.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Delivery1" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Klient.v03.Store">
+    <Position X="0.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FAACAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Store.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.Vat">
+    <Position X="3.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIACAAAAAAAAAABAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.Properties.Resources">
+    <Position X="6.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Klient.v03.Properties.Settings">
+    <Position X="6" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

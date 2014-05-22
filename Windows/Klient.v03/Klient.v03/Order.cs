@@ -26,5 +26,16 @@ namespace Klient.v03
     
         public virtual Customer Customer { get; set; }
         public virtual ICollection<OrderDetail> OrderDetail { get; set; }
+
+        public Customer Customer1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }

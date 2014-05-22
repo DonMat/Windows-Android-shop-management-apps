@@ -23,5 +23,27 @@ namespace Klient.v03
     
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
+
+        public Order Order1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public ShopContext ShopContext
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }

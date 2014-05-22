@@ -32,5 +32,49 @@ namespace Klient.v03
         public virtual ICollection<Price> Price { get; set; }
         public virtual Store Store { get; set; }
         public virtual ICollection<Vat> Vat { get; set; }
+
+        public Store Store1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Vat Vat1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public ShopContext ShopContext
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public EditingWindow EditingWindow
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }

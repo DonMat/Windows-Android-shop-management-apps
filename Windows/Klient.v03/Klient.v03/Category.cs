@@ -23,5 +23,16 @@ namespace Klient.v03
         public string Nazwa { get; set; }
     
         public virtual ICollection<Product> Product { get; set; }
+
+        public EditingWindow EditingWindow
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }

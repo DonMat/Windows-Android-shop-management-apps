@@ -19,7 +19,40 @@ namespace Klient.v03
         public System.DateTime Od { get; set; }
         public Nullable<System.DateTime> Do { get; set; }
         public double Cena { get; set; }
-    
+
         public virtual Product Product { get; set; }
+
+        public Product Product1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public ShopContext ShopContext
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public EditingWindow EditingWindow
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }

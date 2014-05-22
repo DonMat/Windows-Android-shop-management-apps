@@ -54,6 +54,13 @@
     <Compile Include="Account.cs">
       <DependentUpon>ShopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AccountInfo.cs" />
+    <Compile Include="AddingCatWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingCatWindow.Designer.cs">
+      <DependentUpon>AddingCatWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>ShopModel.tt</DependentUpon>
     </Compile>
@@ -66,35 +73,47 @@
     <Compile Include="DeliveryDetail.cs">
       <DependentUpon>ShopModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="EditingCatWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="EditingCatWindow.Designer.cs">
+      <DependentUpon>EditingCatWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="LoginWindow.Designer.cs">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="RegisterWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="RegisterWindow.Designer.cs">
+      <DependentUpon>RegisterWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="AddingWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="AddingWindow.Designer.cs">
+      <DependentUpon>AddingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingWindow.Designer.cs">
+      <DependentUpon>EditingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmWindow.Designer.cs">
+      <DependentUpon>ConfirmWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>ShopModel.tt</DependentUpon>
@@ -134,20 +153,29 @@
     <Compile Include="Vat.cs">
       <DependentUpon>ShopModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AddingCatWindow.resx">
+      <DependentUpon>AddingCatWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="EditingCatWindow.resx">
+      <DependentUpon>EditingCatWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="LoginWindow.resx">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="RegisterWindow.resx">
+      <DependentUpon>RegisterWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddingWindow.resx">
+      <DependentUpon>AddingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingWindow.resx">
+      <DependentUpon>EditingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmWindow.resx">
+      <DependentUpon>ConfirmWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -158,6 +186,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -8,6 +8,16 @@ namespace Klient.v03
 {
     static class Program
     {
+        public static LoginWindow LoginWindow
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +26,7 @@ namespace Klient.v03
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainWindow());
             
         }
     }

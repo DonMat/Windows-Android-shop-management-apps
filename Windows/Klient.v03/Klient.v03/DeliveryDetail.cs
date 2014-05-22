@@ -22,5 +22,27 @@ namespace Klient.v03
     
         public virtual Delivery Delivery { get; set; }
         public virtual Product Product { get; set; }
+
+        public Delivery Delivery1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Product Product1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }
