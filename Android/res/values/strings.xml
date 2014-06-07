@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">KlientApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Otworz">Otwórz</string>
+    <string name="Zamknij">Zamknij</string>
+    <string name="podaj_login">Podaj swój login</string>
+    <string name="haslo">Podaj hasło</string>
+    <string name="zaloguj">Zaloguj</string>
+
+</resources>
