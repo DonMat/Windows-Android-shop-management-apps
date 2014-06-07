@@ -23,10 +23,11 @@
         android:hint="@string/haslo" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/bLogi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="Login"
-        android:text="@string/zaloguj" />
+        android:text="@string/zaloguj"
+        android:enabled="false" />
 
 </LinearLayout>
