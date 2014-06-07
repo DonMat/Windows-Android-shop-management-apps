@@ -9,5 +9,10 @@
     <string name="podaj_login">Podaj swój login</string>
     <string name="haslo">Podaj hasło</string>
     <string name="zaloguj">Zaloguj</string>
+    <string name="zalogowany">>  </string>
+    <string name="ObZalogow">Obecnie zalogowany jako: \n</string>
+    <string name="zleHaslo">Błędne hasło</string>
+    <string name="wyloguj">Wyloguj</string>
+    <string name="testHas">Testowanie hasła..</string>
 
 </resources>

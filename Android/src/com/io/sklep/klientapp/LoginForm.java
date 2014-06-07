@@ -1,6 +1,5 @@
 package com.io.sklep.klientapp;
 
-
 import android.app.Fragment;
 import android.os.Bundle;
 import android.text.Editable;
@@ -56,6 +55,7 @@ public class LoginForm extends Fragment {
 				
 			}
 		});
+                   
           return view;
     }
 

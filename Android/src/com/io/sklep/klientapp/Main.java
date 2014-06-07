@@ -19,17 +19,20 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.io.sklep.MD5.MD5;
+
 public class Main extends Activity {		 
 	      private DrawerLayout mDrawerLayout;
 	      private ListView mDrawerList;
 	      private ActionBarDrawerToggle mDrawerToggle;
-	 
+		  
+
 	      private CharSequence mDrawerTitle;
 	      private CharSequence mTitle;
 	      private DrawerAdapter adapter;
 	 
 	      private List<Element> elementy;
-
+	      private boolean zalogowany;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class Main extends Activity {
 		  
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
-		  
+		zalogowany = false;
 		  
 		elementy = new ArrayList<Element>();
         mTitle = mDrawerTitle = getTitle();
@@ -52,6 +55,7 @@ public class Main extends Activity {
         elementy.add(new Element("Produkty",R.drawable.ic_launcher));
         elementy.add(new Element("Zamówienia",R.drawable.ic_launcher));
         elementy.add(new Element("Zaloguj",R.drawable.ic_launcher));
+        
         
         adapter = new DrawerAdapter(this, R.layout.drawer_item, elementy);
         mDrawerList.setAdapter(adapter);
@@ -77,6 +81,11 @@ public class Main extends Activity {
     
     if (savedInstanceState == null) {
           SelectItem(1);
+    }
+    else
+    {
+    	elementy.get(2).napis = savedInstanceState.getString("Login");
+    	zalogowany = savedInstanceState.getBoolean("Log");
     }
     
     
@@ -104,18 +113,20 @@ public class Main extends Activity {
                           .getImgResID());
               break;
         case 1:
-              fragment = new Fragment1();
+              fragment = new Fragment2();
               args.putString(Fragment2.ITEM_NAME, elementy.get(possition)
                           .getItemName());
-              args.putInt(Fragment1.IMAGE_RESOURCE_ID, elementy.get(possition)
+              args.putInt(Fragment2.IMAGE_RESOURCE_ID, elementy.get(possition)
                           .getImgResID());
               break;
         case 2:
+        	if(zalogowany == false)
               fragment = new LoginForm();
-//              args.putString(Fragment1.ITEM_NAME, elementy.get(possition)
-//                          .getItemName());
-//              args.putInt(Fragment1.IMAGE_RESOURCE_ID, elementy.get(possition)
-//                          .getImgResID());
+        	else
+        	{
+        		fragment = new LogOut();
+                args.putString(LogOut.ITEM_NAME, elementy.get(possition).getItemName());
+        	}
               break;
         
         default:
@@ -167,11 +178,37 @@ public class Main extends Activity {
 	}
 }
     public void Login(View w) {
-		Toast.makeText(getApplicationContext(), "Main", Toast.LENGTH_SHORT).show();
-		Element a = elementy.remove(2);
-		EditText login = (EditText) findViewById(R.id.eLogin);
-		a.napis = login.getText().toString();
-		
-		elementy.add(2, a);
+		EditText pass = (EditText) findViewById(R.id.ePassword);
+		EditText login =  (EditText) findViewById(R.id.eLogin);
+    	String pas= (pass.getText().toString());
+		MD5 m = new MD5(pas);
+
+    	String nazwa = login.getText().toString();
+    	if(m.check(nazwa, this) == true)
+    	{    		
+    		elementy.get(2).napis = getString(R.string.zalogowany)+nazwa;		  		
+    		zalogowany = true;
+    		adapter.notifyDataSetChanged();
+    		SelectItem(2);
+    	}
+    	else
+    	{
+    		Toast.makeText(getApplicationContext(), R.string.zleHaslo, Toast.LENGTH_SHORT).show();
+    	}
 	}
+    
+    public void LogOut(View w) {
+		zalogowany = false;
+		elementy.get(2).napis = getString(R.string.zaloguj);
+		adapter.notifyDataSetChanged();
+		SelectItem(2);
+	}
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+    	outState.putString("Login", elementy.get(2).napis);
+    	outState.putBoolean("Log", zalogowany);
+    super.onSaveInstanceState(outState);
+    
+    }
+    
 }
