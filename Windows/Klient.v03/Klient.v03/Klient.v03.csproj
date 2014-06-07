@@ -61,6 +61,12 @@
     <Compile Include="AddingCatWindow.Designer.cs">
       <DependentUpon>AddingCatWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddingProvWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingProvWindow.Designer.cs">
+      <DependentUpon>AddingProvWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>ShopModel.tt</DependentUpon>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="EditingCatWindow.Designer.cs">
       <DependentUpon>EditingCatWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditingProvWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingProvWindow.Designer.cs">
+      <DependentUpon>EditingProvWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -156,8 +168,14 @@
     <EmbeddedResource Include="AddingCatWindow.resx">
       <DependentUpon>AddingCatWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddingProvWindow.resx">
+      <DependentUpon>AddingProvWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditingCatWindow.resx">
       <DependentUpon>EditingCatWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingProvWindow.resx">
+      <DependentUpon>EditingProvWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

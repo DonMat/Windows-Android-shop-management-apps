@@ -268,6 +268,24 @@ namespace Klient.v03
             }
         }
 
+        public bool DeleteProvider(int _Id)
+        {
+            using (var db = new ShopContext())
+            {
+                try
+                {
+                    var prov = db.Provider.First(x => x.Id == _Id);
+                    db.Provider.Remove(prov);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
         public bool DeleteProduct(int _Id)
         {
             using (var db = new ShopContext())
@@ -415,6 +433,52 @@ namespace Klient.v03
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FilterProducts();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            AddingProvWindow adding = new AddingProvWindow();
+            adding.ShowDialog();
+            if (adding.DialogResult == DialogResult.OK)
+            {
+                FillProviders();
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            ConfirmWindow confirm = new ConfirmWindow("Czy na pewno usunąć zaznaczonego dostawcę?");
+            confirm.ShowDialog();
+            if (confirm.DialogResult != DialogResult.Yes)
+            {
+                return;
+            }
+            if (dataGridView5.CurrentRow != null && DeleteProvider((int)dataGridView5.CurrentRow.Cells[0].Value))
+            {
+                dataGridView5.Rows.RemoveAt(dataGridView5.CurrentRow.Index);
+            }
+            else
+            {
+                MessageBox.Show("Wystąpił błąd z usunięciem kategorii");
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            FillProviders();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (dataGridView5.CurrentRow != null)
+            {
+                EditingProvWindow editing = new EditingProvWindow(dataGridView5.CurrentRow);
+                editing.ShowDialog();
+                if (editing.DialogResult == DialogResult.OK)
+                {
+                    FillProviders();
+                }
+            }
         }
     }
 }

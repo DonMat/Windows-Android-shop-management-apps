@@ -13,18 +13,26 @@ namespace Klient.v03
     public partial class EditingWindow : Form
     {
         //DataGridView datagrid;
+        private ShopContext database;
         DataGridViewRow row;
         int kategoriaId;
         private void FillCategories()
         {
-            using (var db = new ShopContext())
+            try
             {
-                var data1 = db.Category;
-                dataGridView1.Rows.Clear();
-                foreach (var cat in data1)
+                using (var db = new ShopContext())
                 {
-                    dataGridView1.Rows.Add(cat.Id, cat.Nazwa);
+                    var data1 = db.Category;
+                    dataGridView1.Rows.Clear();
+                    foreach (var cat in data1)
+                    {
+                        dataGridView1.Rows.Add(cat.Id, cat.Nazwa);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
             }
         }
         public EditingWindow(/*DataGridView _datagrid, */DataGridViewRow _row)
@@ -54,89 +62,72 @@ namespace Klient.v03
 
         public bool EditProduct(int _id, int _kategoriaId, string _nazwa)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Product Prod = database.Product.First(x => x.Id == _id);
+                if (!Prod.Nazwa.Equals(_nazwa))
                 {
-                    Product Prod = db.Product.First(x => x.Id==_id);
-                    if (!Prod.Nazwa.Equals(_nazwa))
-                    {
-                        Prod.Nazwa = _nazwa;
-                        if (Prod.KategoriaId != _kategoriaId/*(int)dataGridView1.CurrentRow.Cells[1].Value*/)
-                        {
-                            Prod.KategoriaId = _kategoriaId;
-                        }
-                        db.SaveChanges();
-                    }
-                    if (Prod.KategoriaId != _kategoriaId)
-                    {
-                        Prod.KategoriaId = _kategoriaId;
-                        db.SaveChanges();
-                    }
-                    return true;
+                    Prod.Nazwa = _nazwa;
                 }
-                catch
+                if (Prod.KategoriaId != _kategoriaId)
                 {
-                    return false;
+                    Prod.KategoriaId = _kategoriaId;
                 }
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
         public bool EditPrice(int _IdCeny, int _ProduktId, DateTime _Od, double _Cena)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Price pri = database.Price.First(x => x.CenaId == _IdCeny);
+                if (pri.Cena != _Cena)
                 {
-                    Price pri = db.Price.First(x => x.CenaId == _IdCeny);
-                    if (pri.Cena != _Cena)
+                    pri.Do = _Od;
+                    Price PriceToInsert = new Price()
                     {
-                        pri.Do = _Od;
-                        Price PriceToInsert = new Price()
-                        {
-                            ProduktId = _ProduktId,
-                            Od = _Od,
-                            Cena = _Cena
-                        };
-
-                        db.Price.Add(PriceToInsert);
-                        db.SaveChanges();
-                    }
-                    return true;
+                        ProduktId = _ProduktId,
+                        Od = _Od,
+                        Cena = _Cena
+                    };
+                    database.Price.Add(PriceToInsert);
                 }
-                catch
-                {
-                    return false;
-                }
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
         public bool EditVat(int _IdVat, int _ProduktId, DateTime _Od, int _WartoscVat)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Vat vat = db.Vat.First(x => x.Id == _IdVat);
+                if (vat.WartoscVat != _WartoscVat)
                 {
-                    Vat vat = db.Vat.First(x => x.Id == _IdVat);
-                    if (vat.WartoscVat != _WartoscVat)
+                    vat.Do = _Od;
+                    Vat VatToInsert = new Vat()
                     {
-                        vat.Do = _Od;
-                        Vat VatToInsert = new Vat()
-                        {
-                            ProduktId = _ProduktId,
-                            Od = _Od,
-                            WartoscVat = _WartoscVat
-                        };
+                        ProduktId = _ProduktId,
+                        Od = _Od,
+                        WartoscVat = _WartoscVat
+                    };
 
-                        db.Vat.Add(VatToInsert);
-                        db.SaveChanges();
-                    }
-                    return true;
+                    db.Vat.Add(VatToInsert);
+                    db.SaveChanges();
                 }
-                catch
-                {
-                    return false;
-                }
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
@@ -201,6 +192,11 @@ namespace Klient.v03
             catch
             {
                 MessageBox.Show(textBox4.Text + " nie jest poprawną liczbą");
+                return;
+            }
+            if(availble<(int)row.Cells[6].Value)
+            {
+                MessageBox.Show(textBox4.Text + " to mniej niż w tym momencie jest zamówionych");
                 return;
             }
             if (

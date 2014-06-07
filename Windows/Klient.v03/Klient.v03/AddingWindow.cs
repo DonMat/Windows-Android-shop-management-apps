@@ -13,16 +13,24 @@ namespace Klient.v03
     public partial class AddingWindow : Form
     {
         //public DataGridView datagrid;
+        private ShopContext database;
         private void FillCategories()
         {
-            using (var db = new ShopContext())
+            try
             {
-                var data1 = db.Category;
-                dataGridView1.Rows.Clear();
-                foreach (var cat in data1)
+                using (var db = new ShopContext())
                 {
-                    dataGridView1.Rows.Add(cat.Id, cat.Nazwa);
+                    var data1 = db.Category;
+                    dataGridView1.Rows.Clear();
+                    foreach (var cat in data1)
+                    {
+                        dataGridView1.Rows.Add(cat.Id, cat.Nazwa);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
             }
         }
 
@@ -58,82 +66,68 @@ namespace Klient.v03
 
         public bool InsertNewPrice(int _ProduktId, DateTime _Od, DateTime _Do, double _Cena)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Price PriceToInsert = new Price()
                 {
-                    Price PriceToInsert = new Price()
-                    {
-                        ProduktId = _ProduktId,
-                        Od = _Od,
-                        Do = _Do,
-                        Cena = _Cena
-                    };
+                    ProduktId = _ProduktId,
+                    Od = _Od,
+                    Do = _Do,
+                    Cena = _Cena
+                };
 
-                    db.Price.Add(PriceToInsert);
-                    db.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                database.Price.Add(PriceToInsert);
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
         public bool InsertNewPrice(int _ProduktId, DateTime _Od, double _Cena)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Price PriceToInsert = new Price()
                 {
-                    Price PriceToInsert = new Price()
-                    {
-                        ProduktId = _ProduktId,
-                        Od = _Od,
-                        Cena = _Cena
-                    };
+                    ProduktId = _ProduktId,
+                    Od = _Od,
+                    Cena = _Cena
+                };
 
-                    db.Price.Add(PriceToInsert);
-                    db.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                database.Price.Add(PriceToInsert);
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
         public bool InsertNewVat(int _ProduktId, DateTime _Od, DateTime _Do, int _WartoscVat)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Vat VatToInsert = new Vat()
                 {
-                    Vat VatToInsert = new Vat()
-                    {
-                        ProduktId = _ProduktId,
-                        Od = _Od,
-                        Do = _Do,
-                        WartoscVat = _WartoscVat
-                    };
+                    ProduktId = _ProduktId,
+                    Od = _Od,
+                    Do = _Do,
+                    WartoscVat = _WartoscVat
+                };
 
-                    db.Vat.Add(VatToInsert);
-                    db.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                database.Vat.Add(VatToInsert);
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
         public bool InsertNewVat(int _ProduktId, DateTime _Od, int _WartoscVat)
         {
-            using (var db = new ShopContext())
-            {
                 try
                 {
                     Vat VatToInsert = new Vat()
@@ -143,38 +137,32 @@ namespace Klient.v03
                         WartoscVat = _WartoscVat
                     };
 
-                    db.Vat.Add(VatToInsert);
-                    db.SaveChanges();
+                    database.Vat.Add(VatToInsert);
                     return true;
                 }
                 catch
                 {
                     return false;
                 }
-            }
         }
 
         public bool InsertNewStore(int _ProduktId, int _IloscDostepnych, int _IloscZamowionych)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Store StoreToInsert = new Store()
                 {
-                    Store StoreToInsert = new Store()
-                    {
-                        ProduktId = _ProduktId,
-                        IloscDostepnych = _IloscDostepnych,
-                        IloscZamowionych = _IloscZamowionych
-                    };
+                    ProduktId = _ProduktId,
+                    IloscDostepnych = _IloscDostepnych,
+                    IloscZamowionych = _IloscZamowionych
+                };
 
-                    db.Store.Add(StoreToInsert);
-                    db.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                database.Store.Add(StoreToInsert);
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
@@ -220,11 +208,31 @@ namespace Klient.v03
                 MessageBox.Show(textBox4.Text + " nie jest poprawną liczbą");
                 return;
             }
+            if (availble < 0)
+            {
+                MessageBox.Show(textBox4.Text + " nie jest poprawną wartością");
+                return;
+            }
+            if (price < 0)
+            {
+                MessageBox.Show("Cena powinna być dodatnia");
+                return;
+            }
+            database = new ShopContext();
             int productId=InsertNewProduct(textBox1.Text, cat);
             if (productId > 0 && InsertNewPrice(productId, DateTime.Now, price) &&
                 InsertNewVat(productId, DateTime.Now, vat) &&
                 InsertNewStore(productId, availble, 0))
             {
+                try
+                {
+                    database.SaveChanges();
+                }
+                catch
+                {
+                    MessageBox.Show("Błąd zapisu do bazy");
+                    return;
+                }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
