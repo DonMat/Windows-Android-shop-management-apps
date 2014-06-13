@@ -12,15 +12,16 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.io.sklep.klientapp.R;
-public class GetPassword extends AsyncTask<Connection, Void, String>{
+
+public class GetUserInfo extends AsyncTask<Connection, Void, String[]>{
 	ProgressDialog pDialog;
 	Connection conn;
-	String user;
 	Context cont;
-	public GetPassword(String us, Context c) {
-		user = us;
+	public String id;
+	
+	public GetUserInfo(String id, Context c) {
 		cont = c;
-		
+		this.id = id;
 		DbHelper a = new DbHelper(c);
 		try {
 			conn = a.execute().get();
@@ -29,32 +30,35 @@ public class GetPassword extends AsyncTask<Connection, Void, String>{
 		} catch (ExecutionException e) {			
 		}
 	}
-	
 	@Override
-	protected String doInBackground(Connection... params) {
-		String result = new String();
+	protected String[] doInBackground(Connection... params) {
+		String[] out = new String[5];
 		if(conn != null)
 		{
 	    	Statement st;
 			String query;
 			ResultSet resoult;
 			
-			query = "Select `Haslo` from `Account` where `NazwaUzytkownika` like '"+user+"' limit 1";
-
+				query = "CALL `infoUser` ('"+id+"')";
+			
 			try {
 				st = conn.createStatement();
 				resoult = st.executeQuery(query);			
 				while(resoult.next())
-				{					
-					result +=resoult.getString(1);
+				{		
+					out[0] = resoult.getString(2)+" "+ resoult.getString(3);
+					out[1] = resoult.getString(4)+" "+ resoult.getString(5);
+					out[2] = resoult.getString(6)+" "+ resoult.getString(7);
+					out[3] = resoult.getString(8);
+					out[4] = resoult.getString(9);					
 				}
-				Log.i("1234", result);
+				Log.i("1234", "5 rozmiar");
 
 				st.close();
 				resoult.close();
 				
 			} catch (SQLException e) {
-				Log.e("1234", "SQL error");
+				Log.e("1234", "SQL error"+e.getMessage());
 			}
 			catch(Exception a)
 			{
@@ -67,7 +71,7 @@ public class GetPassword extends AsyncTask<Connection, Void, String>{
             	Log.i("1234", e.getMessage());
             }
 		}
-	return result;
+	return out;
 	}
 
 	@Override
@@ -75,15 +79,14 @@ public class GetPassword extends AsyncTask<Connection, Void, String>{
 		super.onPreExecute();
 
 	        pDialog = new ProgressDialog(cont);
-	        pDialog.setMessage(cont.getString(R.string.testHas));
+	        pDialog.setMessage(cont.getString(R.string.produkty));
 	        pDialog.setCancelable(false);
 	        pDialog.show();
 	}
 	@Override
-	protected void onPostExecute(String result) {
+	protected void onPostExecute(String[] result) {
 	    super.onPostExecute(result);
 	    if (pDialog.isShowing())
 	        pDialog.dismiss();
 	}
-
 }

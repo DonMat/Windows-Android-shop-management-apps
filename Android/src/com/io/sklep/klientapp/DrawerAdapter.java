@@ -1,7 +1,7 @@
 package com.io.sklep.klientapp;
 
 import java.util.List;
- 
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;

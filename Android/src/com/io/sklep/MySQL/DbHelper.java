@@ -4,12 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import com.io.sklep.klientapp.R;
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-
-import com.io.sklep.klientapp.R;
 
 public class DbHelper extends AsyncTask<Connection, Void, Connection> {
 	private final String dbName="chmielek_test";

@@ -19,5 +19,9 @@
     <string name="na_stanie_">"W magazynie: "</string>
     <string name="brak_internetu_">Brak internetu...</string>
     <string name="sprawd_po_aczenie_z_sieci_">Sprawdź połaczenie z siecią.</string>
+    <string name="szukaj">Szukaj</string>
+    <string name="kategorie">Trwa wczytywanie kategorii</string>
+    <string name="produkty">Trwa wczytywanie produktów</string>
+    <string name="wczytaj">Trwa ładowanie danych</string>
 
 </resources>

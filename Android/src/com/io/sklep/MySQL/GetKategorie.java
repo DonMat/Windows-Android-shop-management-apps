@@ -4,23 +4,25 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
+
+import com.io.sklep.klientapp.R;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.io.sklep.klientapp.R;
-public class GetPassword extends AsyncTask<Connection, Void, String>{
+public class GetKategorie extends AsyncTask<Connection, Void, ArrayList<KategoriaElem>>{
 	ProgressDialog pDialog;
 	Connection conn;
-	String user;
 	Context cont;
-	public GetPassword(String us, Context c) {
-		user = us;
+
+	
+	public GetKategorie(Context c) {
 		cont = c;
-		
+
 		DbHelper a = new DbHelper(c);
 		try {
 			conn = a.execute().get();
@@ -31,24 +33,24 @@ public class GetPassword extends AsyncTask<Connection, Void, String>{
 	}
 	
 	@Override
-	protected String doInBackground(Connection... params) {
-		String result = new String();
+	protected ArrayList<KategoriaElem> doInBackground(Connection... params) {
+		ArrayList<KategoriaElem> out = new ArrayList<KategoriaElem>();
 		if(conn != null)
 		{
 	    	Statement st;
 			String query;
 			ResultSet resoult;
 			
-			query = "Select `Haslo` from `Account` where `NazwaUzytkownika` like '"+user+"' limit 1";
+			query = "SELECT * FROM `Category`";
 
 			try {
 				st = conn.createStatement();
 				resoult = st.executeQuery(query);			
 				while(resoult.next())
 				{					
-					result +=resoult.getString(1);
+					out.add( new KategoriaElem(resoult.getString(2), resoult.getInt(1)) );
 				}
-				Log.i("1234", result);
+				Log.i("1234", out.size()+" rozmiar");
 
 				st.close();
 				resoult.close();
@@ -67,7 +69,7 @@ public class GetPassword extends AsyncTask<Connection, Void, String>{
             	Log.i("1234", e.getMessage());
             }
 		}
-	return result;
+	return out;
 	}
 
 	@Override
@@ -75,15 +77,14 @@ public class GetPassword extends AsyncTask<Connection, Void, String>{
 		super.onPreExecute();
 
 	        pDialog = new ProgressDialog(cont);
-	        pDialog.setMessage(cont.getString(R.string.testHas));
+	        pDialog.setMessage(cont.getString(R.string.kategorie));
 	        pDialog.setCancelable(false);
 	        pDialog.show();
 	}
 	@Override
-	protected void onPostExecute(String result) {
+	protected void onPostExecute(ArrayList<KategoriaElem> result) {
 	    super.onPostExecute(result);
 	    if (pDialog.isShowing())
 	        pDialog.dismiss();
 	}
-
 }
