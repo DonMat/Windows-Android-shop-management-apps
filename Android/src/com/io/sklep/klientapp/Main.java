@@ -4,9 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
@@ -21,18 +26,19 @@ import android.widget.Toast;
 
 import com.io.sklep.MD5.MD5;
 
-public class Main extends Activity {		 
+public class Main extends Activity {
 	      private DrawerLayout mDrawerLayout;
 	      private ListView mDrawerList;
 	      private ActionBarDrawerToggle mDrawerToggle;
-		  
-
+	 
 	      private CharSequence mDrawerTitle;
 	      private CharSequence mTitle;
 	      private DrawerAdapter adapter;
 	 
 	      private List<Element> elementy;
 	      private boolean zalogowany;
+	      
+	      private AlertDialog alertDialog;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +60,7 @@ public class Main extends Activity {
         
         elementy.add(new Element("Produkty",R.drawable.ic_launcher));
         elementy.add(new Element("Zamówienia",R.drawable.ic_launcher));
-        elementy.add(new Element("Zaloguj",R.drawable.ic_launcher));
+        elementy.add(new Element("Zaloguj",R.drawable.ic_action_person));
         
         
         adapter = new DrawerAdapter(this, R.layout.drawer_item, elementy);
@@ -77,18 +83,22 @@ public class Main extends Activity {
           }
     };
     
-    mDrawerLayout.setDrawerListener(mDrawerToggle);
+	    mDrawerLayout.setDrawerListener(mDrawerToggle);
+	    
+	    if (savedInstanceState == null) {
+	          SelectItem(1);
+	    }
+	    else
+	    {
+	    	elementy.get(2).napis = savedInstanceState.getString("Login");
+	    	zalogowany = savedInstanceState.getBoolean("Log");
+	    }
     
-    if (savedInstanceState == null) {
-          SelectItem(1);
-    }
-    else
-    {
-    	elementy.get(2).napis = savedInstanceState.getString("Login");
-    	zalogowany = savedInstanceState.getBoolean("Log");
-    }
-    
-    
+	    if(internet() == false)
+	    {
+	    	polaczenie();
+	    }
+
 	}
 
 	@Override
@@ -106,11 +116,8 @@ public class Main extends Activity {
         Bundle args = new Bundle();
         switch (possition) {
         case 0:
-              fragment = new Fragment1();
-              args.putString(Fragment1.ITEM_NAME, elementy.get(possition)
-                          .getItemName());
-              args.putInt(Fragment1.IMAGE_RESOURCE_ID, elementy.get(possition)
-                          .getImgResID());
+              fragment = new Produkty();
+              
               break;
         case 1:
               fragment = new Fragment2();
@@ -128,7 +135,13 @@ public class Main extends Activity {
                 args.putString(LogOut.ITEM_NAME, elementy.get(possition).getItemName());
         	}
               break;
-        
+        case 3:
+            fragment = new Fragment1();
+            args.putString(Fragment1.ITEM_NAME, elementy.get(possition)
+                        .getItemName());
+            args.putInt(Fragment1.IMAGE_RESOURCE_ID, elementy.get(possition)
+                        .getImgResID());
+            break;
         default:
               break;
         }
@@ -184,7 +197,7 @@ public class Main extends Activity {
 		MD5 m = new MD5(pas);
 
     	String nazwa = login.getText().toString();
-    	if(m.check(nazwa, this) == true)
+    	if(m.check(nazwa,Main.this) == true)
     	{    		
     		elementy.get(2).napis = getString(R.string.zalogowany)+nazwa;		  		
     		zalogowany = true;
@@ -211,4 +224,32 @@ public class Main extends Activity {
     
     }
     
-}
+    private boolean internet() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return (activeNetworkInfo != null && activeNetworkInfo.isConnected());
+    }
+    
+    @SuppressWarnings("deprecation")
+	public void polaczenie()
+    {
+    	alertDialog = new AlertDialog.Builder(this).create();
+    	alertDialog.setTitle(getString(R.string.brak_internetu_));
+    	alertDialog.setMessage(getString(R.string.sprawd_po_aczenie_z_sieci_));
+    	alertDialog.setCancelable(false);
+    	
+    	alertDialog.setButton("Ponów próbę", new DialogInterface.OnClickListener() {
+    	public void onClick(DialogInterface dialog, int which) {
+    		if(internet())
+    		{
+    			alertDialog.dismiss();
+    		}
+    		else
+    		{
+    			polaczenie();
+    		}  		
+    	}
+    	});    	
+    	alertDialog.show();
+    }
+  }
