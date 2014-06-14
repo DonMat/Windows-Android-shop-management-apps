@@ -17,7 +17,7 @@
     <string name="zl">" zł"</string>
     <string name="szt">" szt."</string>
     <string name="na_stanie_">"W magazynie: "</string>
-    <string name="brak_internetu_">Brak internetu...</string>
+    <string name="brak_internetu_">Brak internetu&#8230;</string>
     <string name="sprawd_po_aczenie_z_sieci_">Sprawdź połaczenie z siecią.</string>
     <string name="szukaj">Szukaj</string>
     <string name="kategorie">Trwa wczytywanie kategorii</string>
