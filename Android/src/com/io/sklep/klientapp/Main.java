@@ -111,13 +111,6 @@ protected void onCreate(Bundle savedInstanceState) {
   	zalogowany = savedInstanceState.getBoolean("Log");
   	idUsera = savedInstanceState.getInt("UserID");
   }
-
-  if(internet() == false)
-  {
-  	polaczenie();
-  }
-  
-
 }
 
 @Override
@@ -133,6 +126,12 @@ public void SelectItem(int possition) {
 	 
   Fragment fragment = null;
   Bundle args = new Bundle();
+  
+  if(internet() == false)
+  {
+  	polaczenie(possition);
+  }
+  
   switch (possition) {
   case 0:
         fragment = new Produkty();
@@ -274,7 +273,7 @@ private boolean internet() {
 }
 
 @SuppressWarnings("deprecation")
-public void polaczenie()
+public void polaczenie(final int poz)
 {
 	alertDialog = new AlertDialog.Builder(this).create();
 	alertDialog.setTitle(getString(R.string.brak_internetu_));
@@ -288,11 +287,11 @@ public void polaczenie()
 		if(internet())
 		{
 			alertDialog.dismiss();
-			SelectItem(0);
+			SelectItem(poz);
 		}
 		else
 		{
-			polaczenie();
+			polaczenie(poz);
 		}  		
 	}
 	});    	
