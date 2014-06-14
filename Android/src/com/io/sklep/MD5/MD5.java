@@ -13,6 +13,7 @@ import com.io.sklep.MySQL.GetPassword;
 public class MD5 {
 	private String in;
 	private String out;
+	public int id;
 	public MD5(String in) {
 		this.in = in;
 		
@@ -69,12 +70,20 @@ public class MD5 {
     public boolean check(String name, Context context)
     {
     	String t = null;
+    	String dane[];
+    	
 		GetPassword task = new GetPassword(name, context);
 		try {
 			t = task.execute().get();
+			dane = t.split(";");
+			t = dane [1];
+			id = Integer.parseInt(dane[0]);
+			Log.i("2222", t+" : "+ id);
 		} catch (InterruptedException e) {
 			Log.i("1234", e.getMessage());
 		} catch (ExecutionException e) {
+			Log.i("1234", e.getMessage());
+		}catch (Exception e) {
 			Log.i("1234", e.getMessage());
 		}
 		Log.i("122", ">"+ t);

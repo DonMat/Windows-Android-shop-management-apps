@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import android.app.ProgressDialog;
@@ -11,16 +12,18 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.io.sklep.Adapters.Produkt.Zamowienie;
 import com.io.sklep.klientapp.R;
-public class GetPassword extends AsyncTask<Connection, Void, String>{
+
+public class GetZamowienia extends AsyncTask<Connection, Void, ArrayList<Zamowienie>>{
 	ProgressDialog pDialog;
 	Connection conn;
-	String user;
 	Context cont;
-	public GetPassword(String us, Context c) {
-		user = us;
+	public int id;
+	
+	public GetZamowienia(int id, Context c) {
 		cont = c;
-		
+		this.id = id;
 		DbHelper a = new DbHelper(c);
 		try {
 			conn = a.execute().get();
@@ -29,26 +32,25 @@ public class GetPassword extends AsyncTask<Connection, Void, String>{
 		} catch (ExecutionException e) {			
 		}
 	}
-	
 	@Override
-	protected String doInBackground(Connection... params) {
-		String result = new String();
+	protected ArrayList<Zamowienie> doInBackground(Connection... params) {
+		ArrayList<Zamowienie> out = new ArrayList<Zamowienie>();
 		if(conn != null)
 		{
 	    	Statement st;
 			String query;
 			ResultSet resoult;
 			
-			query = "Select `Id`, `Haslo` from `Account` where `NazwaUzytkownika` like '"+user+"' limit 1";
+				query = "CALL `zamowienia` ("+id+")";
 
 			try {
 				st = conn.createStatement();
 				resoult = st.executeQuery(query);			
 				while(resoult.next())
 				{					
-					result +=resoult.getString(1)+";"+resoult.getString(2);
+					out.add( new Zamowienie(resoult.getInt(1), resoult.getDate(2).toString(), resoult.getString(3),resoult.getInt(4), resoult.getDouble(5), resoult.getDouble(6), resoult.getString(7)+", "+resoult.getString(8)) );
 				}
-				Log.i("1234", result);
+				Log.i("1234", out.size()+" rozmiar");
 
 				st.close();
 				resoult.close();
@@ -67,23 +69,21 @@ public class GetPassword extends AsyncTask<Connection, Void, String>{
             	Log.i("1234", e.getMessage());
             }
 		}
-	return result;
+	return out;
 	}
 
-	@Override
 	protected void onPreExecute() {
 		super.onPreExecute();
 
 	        pDialog = new ProgressDialog(cont);
-	        pDialog.setMessage(cont.getString(R.string.testHas));
+	        pDialog.setMessage(cont.getString(R.string.produkty));
 	        pDialog.setCancelable(false);
 	        pDialog.show();
 	}
 	@Override
-	protected void onPostExecute(String result) {
+	protected void onPostExecute(ArrayList<Zamowienie> result) {
 	    super.onPostExecute(result);
 	    if (pDialog.isShowing())
 	        pDialog.dismiss();
 	}
-
 }

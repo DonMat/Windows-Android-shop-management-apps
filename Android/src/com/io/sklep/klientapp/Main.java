@@ -27,6 +27,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+
 import com.io.sklep.MD5.MD5;
 import com.io.sklep.MySQL.GetKategorie;
 import com.io.sklep.MySQL.KategoriaElem;
@@ -42,6 +43,7 @@ public class Main extends Activity {
 
     private List<Element> elementy;
     private boolean zalogowany;
+    private int idUsera;
     
     private AlertDialog alertDialog;
     private ArrayList<String> kategorie;
@@ -58,28 +60,29 @@ protected void onCreate(Bundle savedInstanceState) {
 	
 
 	zalogowany = false;
+	idUsera = -1;
 	  
 	elementy = new ArrayList<Element>();
-  mTitle = mDrawerTitle = getTitle();
-  mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-  mDrawerList = (ListView) findViewById(R.id.left_drawer);
-
-  mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
-              GravityCompat.START);
-  
-  
-  elementy.add(new Element("Produkty",R.drawable.ic_action_collection));
-  elementy.add(new Element("Szukaj",R.drawable.ic_action_search));
-  elementy.add(new Element("Zamówienia",R.drawable.ic_action_go_to_today));
-  elementy.add(new Element("Zaloguj",R.drawable.ic_action_person));
-  
-  
-  
-  adapter = new DrawerAdapter(this, R.layout.drawer_item, elementy);
-  mDrawerList.setAdapter(adapter);
-  mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-  
-  mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+	  mTitle = mDrawerTitle = getTitle();
+	  mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+	  mDrawerList = (ListView) findViewById(R.id.left_drawer);
+	
+	  mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
+	              GravityCompat.START);
+	  
+	  
+	  elementy.add(new Element("Produkty",R.drawable.ic_action_collection));
+	  elementy.add(new Element("Szukaj",R.drawable.ic_action_search));
+	  elementy.add(new Element("Zamówienia",R.drawable.ic_action_go_to_today));
+	  elementy.add(new Element("Zaloguj",R.drawable.ic_action_person));
+	  
+	  
+	  
+	  adapter = new DrawerAdapter(this, R.layout.drawer_item, elementy);
+	  mDrawerList.setAdapter(adapter);
+	  mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+	  
+	  mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
           R.drawable.ic_drawer, R.string.Otworz,
           R.string.Zamknij) {
     @Override
@@ -106,6 +109,7 @@ protected void onCreate(Bundle savedInstanceState) {
   {
   	elementy.get(3).napis = savedInstanceState.getString("Login");
   	zalogowany = savedInstanceState.getBoolean("Log");
+  	idUsera = savedInstanceState.getInt("UserID");
   }
 
   if(internet() == false)
@@ -144,12 +148,14 @@ public void SelectItem(int possition) {
     	  	
           break;
   case 2:        	
-        fragment = new Fragment2();
-        args.putString(Fragment2.ITEM_NAME, elementy.get(possition)
-                    .getItemName());
-        args.putInt(Fragment2.IMAGE_RESOURCE_ID, elementy.get(possition)
-                    .getImgResID());
-        break;
+	      fragment = new Zamowienia();
+	      args.putString(Zamowienia.ITEM_NAME, elementy.get(possition)
+	                  .getItemName());
+	      args.putInt(Zamowienia.IMAGE_RESOURCE_ID, elementy.get(possition)
+	                  .getImgResID());
+	      args.putBoolean(Zamowienia.LOGGED_IN, zalogowany);
+	      args.putInt(Zamowienia.LOGGED_USER, idUsera);
+	      break;
   case 3:
   	if(zalogowany == false)
         fragment = new LoginForm();
@@ -235,6 +241,7 @@ public void Login(View w) {
 	{    		
 		elementy.get(3).napis = getString(R.string.zalogowany)+nazwa;		  		
 		zalogowany = true;
+		idUsera = m.id;
 		adapter.notifyDataSetChanged();
 		SelectItem(3);
 	}
@@ -247,6 +254,7 @@ public void Login(View w) {
 public void LogOut(View w) {
 	zalogowany = false;
 	elementy.get(3).napis = getString(R.string.zaloguj);
+	idUsera = -1;
 	adapter.notifyDataSetChanged();
 	SelectItem(3);
 }
@@ -254,6 +262,7 @@ public void LogOut(View w) {
 protected void onSaveInstanceState(Bundle outState) {
 	outState.putString("Login", elementy.get(3).napis);
 	outState.putBoolean("Log", zalogowany);
+	outState.putInt("UserID", idUsera);
 super.onSaveInstanceState(outState);
 
 }

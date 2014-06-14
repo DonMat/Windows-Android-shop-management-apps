@@ -23,5 +23,13 @@
     <string name="kategorie">Trwa wczytywanie kategorii</string>
     <string name="produkty">Trwa wczytywanie produktów</string>
     <string name="wczytaj">Trwa ładowanie danych</string>
-
+    <string name="zamow">Zamów</string>
+    <string name="podaj_liczb_sztuk">Podaj liczbę sztuk</string>
+    <string name="anuluj">Anuluj</string>
+    <string name="zam_w">Zamów</string>
+    <string name="dodaj_do_koszyka">Dodaj do koszyka</string>
+    <string name="dodano_do_koszyka">Dodano do koszyka</string>
+    <string name="nie_zalogowany">\nNie jesteś zalogowany</string>
+    <string name="zam_wienie_nr_">"Zamówienie nr: "</string>
+    <string name="dostawa">"Dostawa: "</string>
 </resources>
