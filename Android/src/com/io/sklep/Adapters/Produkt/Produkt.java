@@ -15,5 +15,22 @@ public class Produkt {
 		this.kategoria = kategoria;
 		this.id = id;
 	}
-		
+	public String getNazwa() {
+		return nazwa;
+	}
+	public double getCena() {
+		return cena;
+	}
+	public int getIlosc() {
+		return ilosc;
+	}
+	public int getKategoria() {
+		return kategoria;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setIlosc(int ilosc) {
+		this.ilosc -=ilosc ;
+	}
 }

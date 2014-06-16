@@ -27,7 +27,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-
 import com.io.sklep.MD5.MD5;
 import com.io.sklep.MySQL.GetKategorie;
 import com.io.sklep.MySQL.KategoriaElem;
@@ -63,37 +62,35 @@ protected void onCreate(Bundle savedInstanceState) {
 	idUsera = -1;
 	  
 	elementy = new ArrayList<Element>();
-	  mTitle = mDrawerTitle = getTitle();
-	  mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-	  mDrawerList = (ListView) findViewById(R.id.left_drawer);
-	
-	  mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
-	              GravityCompat.START);
-	  
-	  
-	  elementy.add(new Element("Produkty",R.drawable.ic_action_collection));
-	  elementy.add(new Element("Szukaj",R.drawable.ic_action_search));
-	  elementy.add(new Element("Zamówienia",R.drawable.ic_action_go_to_today));
-	  elementy.add(new Element("Zaloguj",R.drawable.ic_action_person));
-	  
-	  
-	  
-	  adapter = new DrawerAdapter(this, R.layout.drawer_item, elementy);
-	  mDrawerList.setAdapter(adapter);
-	  mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-	  
-	  mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+  mTitle = mDrawerTitle = getTitle();
+  mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+  mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+  mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
+              GravityCompat.START);
+  
+  
+  elementy.add(new Element("Produkty",R.drawable.ic_action_collection));
+  elementy.add(new Element("Szukaj",R.drawable.ic_action_search));
+  elementy.add(new Element("Zamówienia",R.drawable.ic_action_go_to_today));
+  elementy.add(new Element("Zaloguj",R.drawable.ic_action_person));
+  
+  
+  
+  adapter = new DrawerAdapter(this, R.layout.drawer_item, elementy);
+  mDrawerList.setAdapter(adapter);
+  mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+  
+  mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
           R.drawable.ic_drawer, R.string.Otworz,
           R.string.Zamknij) {
-    @Override
-	public void onDrawerClosed(View view) {
+    public void onDrawerClosed(View view) {
           getActionBar().setTitle(mTitle);
           invalidateOptionsMenu(); // creates call to
                                                     // onPrepareOptionsMenu()
     }
 
-    @Override
-	public void onDrawerOpened(View drawerView) {
+    public void onDrawerOpened(View drawerView) {
           getActionBar().setTitle(mDrawerTitle);
           invalidateOptionsMenu(); // creates call to
                                                     // onPrepareOptionsMenu()
@@ -111,6 +108,7 @@ protected void onCreate(Bundle savedInstanceState) {
   	zalogowany = savedInstanceState.getBoolean("Log");
   	idUsera = savedInstanceState.getInt("UserID");
   }
+
 }
 
 @Override
@@ -135,7 +133,7 @@ public void SelectItem(int possition) {
   switch (possition) {
   case 0:
         fragment = new Produkty();
-        
+        args.putInt(Produkty.LOGGED_USER, idUsera);
         break;
   case 1:
           pobierzKategorie();
@@ -147,14 +145,15 @@ public void SelectItem(int possition) {
     	  	
           break;
   case 2:        	
-	      fragment = new Zamowienia();
-	      args.putString(Zamowienia.ITEM_NAME, elementy.get(possition)
-	                  .getItemName());
-	      args.putInt(Zamowienia.IMAGE_RESOURCE_ID, elementy.get(possition)
-	                  .getImgResID());
-	      args.putBoolean(Zamowienia.LOGGED_IN, zalogowany);
-	      args.putInt(Zamowienia.LOGGED_USER, idUsera);
-	      break;
+        fragment = new Zamowienia();
+        args.putString(Zamowienia.ITEM_NAME, elementy.get(possition)
+                    .getItemName());
+        args.putInt(Zamowienia.IMAGE_RESOURCE_ID, elementy.get(possition)
+                    .getImgResID());
+        args.putBoolean(Zamowienia.LOGGED_IN, zalogowany);
+        args.putInt(Zamowienia.LOGGED_USER, idUsera);
+        break;
+        
   case 3:
   	if(zalogowany == false)
         fragment = new LoginForm();
@@ -193,8 +192,6 @@ public void setTitle(CharSequence title) {
 
 @Override
 public boolean onOptionsItemSelected(MenuItem item) {
-    // The action bar home/up action should open or close the drawer.
-    // ActionBarDrawerToggle will take care of this.
     if (mDrawerToggle.onOptionsItemSelected(item)) {
           return true;
     }
@@ -215,7 +212,6 @@ public boolean onOptionsItemSelected(MenuItem item) {
 @Override
 public void onConfigurationChanged(Configuration newConfig) {
     super.onConfigurationChanged(newConfig);
-    // Pass any configuration change to the drawer toggles
     mDrawerToggle.onConfigurationChanged(newConfig);
 }
 
@@ -252,8 +248,8 @@ public void Login(View w) {
 
 public void LogOut(View w) {
 	zalogowany = false;
-	elementy.get(3).napis = getString(R.string.zaloguj);
 	idUsera = -1;
+	elementy.get(3).napis = getString(R.string.zaloguj);
 	adapter.notifyDataSetChanged();
 	SelectItem(3);
 }
@@ -266,15 +262,16 @@ super.onSaveInstanceState(outState);
 
 }
 
-private boolean internet() {
+public boolean internet() {
   ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
   NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
   return (activeNetworkInfo != null && activeNetworkInfo.isConnected());
 }
 
 @SuppressWarnings("deprecation")
-public void polaczenie(final int poz)
+public void polaczenie(int pozy)
 {
+	final int pos = pozy;
 	alertDialog = new AlertDialog.Builder(this).create();
 	alertDialog.setTitle(getString(R.string.brak_internetu_));
 	alertDialog.setMessage(getString(R.string.sprawd_po_aczenie_z_sieci_));
@@ -282,16 +279,15 @@ public void polaczenie(final int poz)
 	alertDialog.setCancelable(false);
 	
 	alertDialog.setButton("Ponów próbę", new DialogInterface.OnClickListener() {
-	@Override
 	public void onClick(DialogInterface dialog, int which) {
 		if(internet())
 		{
 			alertDialog.dismiss();
-			SelectItem(poz);
+			SelectItem(pos);
 		}
 		else
 		{
-			polaczenie(poz);
+			polaczenie(pos);
 		}  		
 	}
 	});    	
@@ -317,4 +313,4 @@ public void pobierzKategorie()
 		kategorie_id.add(a.id+"");
 	}
 }
-  }
+}

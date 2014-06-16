@@ -27,9 +27,14 @@
     <string name="podaj_liczb_sztuk">Podaj liczbę sztuk</string>
     <string name="anuluj">Anuluj</string>
     <string name="zam_w">Zamów</string>
-    <string name="dodaj_do_koszyka">Dodaj do koszyka</string>
-    <string name="dodano_do_koszyka">Dodano do koszyka</string>
     <string name="nie_zalogowany">\nNie jesteś zalogowany</string>
     <string name="zam_wienie_nr_">"Zamówienie nr: "</string>
     <string name="dostawa">"Dostawa: "</string>
+    <string name="rezygnuj">Rezygnuję</string>
+    <string name="anulowano">Anulowano</string>
+    <string name="zamowiono">"\nZamówiono: "</string>
+    <string name="_zrealizowano_">"\nZrealizowano: "</string>
+    <string name="zaloguj_si_aby_z_o_y_zam_wienie">Zaloguj się aby złożyć zamówienie</string>
+    <string name="skladanieZam">Trwa składanie zamówienia</string>
+    
 </resources>

@@ -1,10 +1,8 @@
 package com.io.sklep.MySQL;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import android.app.ProgressDialog;
@@ -12,19 +10,27 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.io.sklep.Adapters.Produkt.Zamowienie;
 import com.io.sklep.klientapp.R;
 
-public class GetZamowienia extends AsyncTask<Connection, Void, ArrayList<Zamowienie>>{
+public class SetZamowienie extends AsyncTask<Connection, Void, String>{
 	ProgressDialog pDialog;
 	Connection conn;
+	int userId;
+	int ile;
+	int produktId;
 	Context cont;
-	public int id;
 	
-	public GetZamowienia(int id, Context c) {
-		cont = c;
-		this.id = id;
-		DbHelper a = new DbHelper(c);
+
+	
+	public SetZamowienie(int userId,int ile, int produktId, Context cont) 
+	{
+		super();
+		this.userId = userId;
+		this.ile = ile;
+		this.produktId = produktId;
+		this.cont = cont;
+		
+		DbHelper a = new DbHelper(cont);
 		try {
 			conn = a.execute().get();
 		} catch (InterruptedException e) {
@@ -32,35 +38,38 @@ public class GetZamowienia extends AsyncTask<Connection, Void, ArrayList<Zamowie
 		} catch (ExecutionException e) {			
 		}
 	}
+
 	@Override
-	protected ArrayList<Zamowienie> doInBackground(Connection... params) {
-		ArrayList<Zamowienie> out = new ArrayList<Zamowienie>();
+	protected String doInBackground(Connection... params) {
+		String result = new String();
 		if(conn != null)
 		{
 	    	Statement st;
 			String query;
-			ResultSet resoult;
+	
 			
-				query = "CALL `zamowienia` ("+id+")";
-
+			query = "call noweZamowienie(" + userId + ");";
+			Log.i("1236", query);
 			try {
 				st = conn.createStatement();
-				resoult = st.executeQuery(query);			
-				while(resoult.next())
-				{					
-					out.add( new Zamowienie(resoult.getInt(1), resoult.getDate(2).toString(), resoult.getString(3),resoult.getInt(4), resoult.getDouble(5), resoult.getDouble(6), resoult.getString(7)+", "+resoult.getString(8),resoult.getDate(9)) );
-					
-				}
-				Log.i("1234", out.size()+" rozmiar");
+				st.executeQuery(query);	
+				query= "call noweZamowienie1(" + userId + "," + ile + "," + produktId + ");"; 
+				Log.i("1236", query);
+
+				st.executeQuery(query);	
+				query = "call updateStore(" + produktId + ", " + ile + ");";
+				Log.i("1236", query);
+
+				st.executeQuery(query);	
 				st.close();
-				resoult.close();
+
 				
 			} catch (SQLException e) {
-				Log.e("1234", "SQL error");
+				Log.e("1235", "SQL error"+e.getMessage());
 			}
 			catch(Exception a)
 			{
-				Log.e("1234", "Inny blad"+a.getMessage());
+				Log.e("1235", "Inny blad");
 			}
 			
 			try {
@@ -69,21 +78,22 @@ public class GetZamowienia extends AsyncTask<Connection, Void, ArrayList<Zamowie
             	Log.i("1234", e.getMessage());
             }
 		}
-	return out;
+	return result;
 	}
 
 	protected void onPreExecute() {
 		super.onPreExecute();
 
 	        pDialog = new ProgressDialog(cont);
-	        pDialog.setMessage(cont.getString(R.string.produkty));
+	        pDialog.setMessage(cont.getString(R.string.skladanieZam));
 	        pDialog.setCancelable(false);
 	        pDialog.show();
 	}
 	@Override
-	protected void onPostExecute(ArrayList<Zamowienie> result) {
+	protected void onPostExecute(String result) {
 	    super.onPostExecute(result);
 	    if (pDialog.isShowing())
 	        pDialog.dismiss();
 	}
+
 }

@@ -41,7 +41,7 @@ public class ZamowienieAdapter extends ArrayAdapter<Zamowienie>{
 		}
 		
 		holder.cena.setText( elementy.get(position).ilosc + context.getString(R.string.szt)+ " x " +elementy.get(position).cena+" = "+ elementy.get(position).wartosc + context.getString(R.string.zl));
-		holder.adres.setText(context.getString(R.string.dostawa)+ elementy.get(position).adres);
+		holder.adres.setText(context.getString(R.string.dostawa)+ elementy.get(position).adres + ( (elementy.get(position).dataRealizacji != null)?context.getResources().getString(R.string._zrealizowano_)+(elementy.get(position).dataRealizacji):context.getResources().getString(R.string.zamowiono)+(elementy.get(position).data)) );
 		holder.idNazwa.setText(context.getString(R.string.zam_wienie_nr_)+elementy.get(position).idZam +" - " + elementy.get(position).nazwa);
 		
 		return wiersz;		
