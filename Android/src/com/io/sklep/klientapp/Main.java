@@ -3,7 +3,6 @@ package com.io.sklep.klientapp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -26,7 +25,6 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.io.sklep.MD5.MD5;
 import com.io.sklep.MySQL.GetKategorie;
 import com.io.sklep.MySQL.KategoriaElem;
@@ -70,10 +68,10 @@ protected void onCreate(Bundle savedInstanceState) {
               GravityCompat.START);
   
   
-  elementy.add(new Element("Produkty",R.drawable.ic_action_collection));
-  elementy.add(new Element("Szukaj",R.drawable.ic_action_search));
-  elementy.add(new Element("Zamówienia",R.drawable.ic_action_go_to_today));
-  elementy.add(new Element("Zaloguj",R.drawable.ic_action_person));
+  elementy.add(new Element(getResources().getString(R.string.produkty),R.drawable.ic_action_collection));
+  elementy.add(new Element(getResources().getString(R.string.szukaj),R.drawable.ic_action_search));
+  elementy.add(new Element(getResources().getString(R.string.zam_wienia),R.drawable.ic_action_go_to_today));
+  elementy.add(new Element(getResources().getString(R.string.zaloguj),R.drawable.ic_action_person));
   
   
   
@@ -100,7 +98,7 @@ protected void onCreate(Bundle savedInstanceState) {
   mDrawerLayout.setDrawerListener(mDrawerToggle);
   
   if (savedInstanceState == null) {
-        SelectItem(0);
+        SelectItem(3);
   }
   else
   {
@@ -142,6 +140,7 @@ public void SelectItem(int possition) {
           
     	  	args.putStringArrayList(Szukaj.ITEM_NAME, kategorie);
     	  	args.putStringArrayList(Szukaj.ITEM_id, kategorie_id);
+            args.putInt(Zamowienia.LOGGED_USER, idUsera);
     	  	
           break;
   case 2:        	

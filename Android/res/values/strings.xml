@@ -21,7 +21,7 @@
     <string name="sprawd_po_aczenie_z_sieci_">Sprawdź połaczenie z siecią.</string>
     <string name="szukaj">Szukaj</string>
     <string name="kategorie">Trwa wczytywanie kategorii</string>
-    <string name="produkty">Trwa wczytywanie produktów</string>
+    <string name="produkty">Produkty</string>
     <string name="wczytaj">Trwa ładowanie danych</string>
     <string name="zamow">Zamów</string>
     <string name="podaj_liczb_sztuk">Podaj liczbę sztuk</string>
@@ -36,5 +36,6 @@
     <string name="_zrealizowano_">"\nZrealizowano: "</string>
     <string name="zaloguj_si_aby_z_o_y_zam_wienie">Zaloguj się aby złożyć zamówienie</string>
     <string name="skladanieZam">Trwa składanie zamówienia</string>
+    <string name="zam_wienia">Zamówienia</string>
     
 </resources>
