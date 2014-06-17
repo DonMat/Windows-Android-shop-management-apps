@@ -39,7 +39,7 @@ public class GetPassword extends AsyncTask<Connection, Void, String>{
 			String query;
 			ResultSet resoult;
 			
-			query = "Select `Id`, `Haslo` from `Account` where `NazwaUzytkownika` like '"+user+"' limit 1";
+			query = "call haslo('"+user+"')";
 
 			try {
 				st = conn.createStatement();

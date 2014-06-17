@@ -41,7 +41,7 @@ public class GetKategorie extends AsyncTask<Connection, Void, ArrayList<Kategori
 			String query;
 			ResultSet resoult;
 			
-			query = "SELECT * FROM `Category`";
+			query = "call kategorie()";
 
 			try {
 				st = conn.createStatement();
