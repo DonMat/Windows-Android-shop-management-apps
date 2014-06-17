@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Index</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<style>
+		html,body {
+			margin: 0; padding: 0px;
+			height:100%; 
+			min-height:100%;
+			background-color: rgb(233,232,220);
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			color: black;
+		}
+
+		body {font-size:75%;position:relative; margin-top:-1px; border-style: solid solid solid solid;	border-color: rgb(172,168,153);	border-width: 0px 0px 1px 0px;}
+		a { text-decoration:none; color:#06c }
+		form {padding:5px; margin:0px;}
+	</style>
+</head>
+<body style="direction: ltr;">
+	<form>
+	Look for:<br /><input style="width:100%" onKeyDown="check_input(this.value,get_match)" onKeyUp="check_input(this.value,get_match)"/>
+	</form>
+
+	<script>
+		var words = new Array(
+"Account Class","Account Constructor","Account Property {Klient.v03.Customer}","Account Property {Klient.v03.ShopContext}","AccountInfo Class","AddingCatWindow Class","AddingCatWindow Constructor","AddingProvWindow Class","AddingProvWindow Constructor","AddingWindow Class","AddingWindow Constructor","Adres Property","AdresDostawy Property","CalculateMD5Hash Method","Category Class","Category Constructor","Category Property {Klient.v03.Product}","Category Property {Klient.v03.ShopContext}","Cena Property","CenaId Property","ConfirmWindow Class","ConfirmWindow Constructor","Customer Class","Customer Constructor","Customer Property {Klient.v03.Account}","Customer Property {Klient.v03.Order}","Customer Property {Klient.v03.ShopContext}","Customer1 Property {Klient.v03.Account}","Customer1 Property {Klient.v03.Order}","Data Property","DataZamowienia Property","DataZrealizowania Property","DeleteCategory Method","DeleteProduct Method","DeleteProvider Method","Delivery Class","Delivery Constructor","Delivery Property {Klient.v03.DeliveryDetail}","Delivery Property {Klient.v03.Provider}","Delivery Property {Klient.v03.ShopContext}","Delivery1 Property {Klient.v03.DeliveryDetail}","Delivery1 Property {Klient.v03.Provider}","DeliveryDetail Class","DeliveryDetail Property {Klient.v03.Delivery}","DeliveryDetail Property {Klient.v03.Product}","DeliveryDetail Property {Klient.v03.ShopContext}","Do Property {Klient.v03.Price}","Do Property {Klient.v03.Vat}","DostawaId Property","DostawcaId Property","EditAvail Method","EditCat Method","EditPrice Method","EditProduct Method","EditProv Method","EditVat Method","EditingCatWindow Class","EditingCatWindow Constructor","EditingProvWindow Class","EditingProvWindow Constructor","EditingWindow Class","EditingWindow Constructor","EditingWindow Property {Klient.v03.Category}","EditingWindow Property {Klient.v03.Price}","EditingWindow Property {Klient.v03.Product}","Fax Property","Haslo Property","Id Property {Klient.v03.Account}","Id Property {Klient.v03.Category}","Id Property {Klient.v03.Customer}","Id Property {Klient.v03.DeliveryDetail}","Id Property {Klient.v03.Delivery}","Id Property {Klient.v03.Product}","Id Property {Klient.v03.Provider}","Id Property {Klient.v03.Vat}","Ilosc Property","IloscDostepnych Property","IloscZamowionych Property","Imie Property","InsertNewCategory Method","InsertNewPrice (Int32, DateTime, DateTime, Double) Method","InsertNewPrice (Int32, DateTime, Double) Method","InsertNewProduct Method","InsertNewProvider Method","InsertNewStore Method","InsertNewVat (Int32, DateTime, DateTime, Int32) Method","InsertNewVat (Int32, DateTime, Int32) Method","KategoriaId Property","Klient.v03 Namespace","Klient.v03 Reference","KlientId Property","KodPocztowy Property","KodPocztowyDostawy Property","KontoId Property","LoginWindow Class","LoginWindow Constructor","LoginWindow Property","Mail Property","MainWindow Class","MainWindow Constructor","Miasto Property","MiastoDostawy Property","Nazwa Property {Klient.v03.Category}","Nazwa Property {Klient.v03.Product}","Nazwa Property {Klient.v03.Provider}","NazwaUzytkownika Property","Nazwisko Property","Netto Property","NrDomu Property","Od Property {Klient.v03.Price}","Od Property {Klient.v03.Vat}","Order Class","Order Constructor","Order Property {Klient.v03.Customer}","Order Property {Klient.v03.OrderDetail}","Order Property {Klient.v03.ShopContext}","Order1 Property","OrderDetail Class","OrderDetail Property {Klient.v03.Customer}","OrderDetail Property {Klient.v03.Order}","OrderDetail Property {Klient.v03.Product}","OrderDetail Property {Klient.v03.ShopContext}","Price Class","Price Property {Klient.v03.Product}","Price Property {Klient.v03.ShopContext}","Product Class","Product Constructor","Product Property {Klient.v03.Category}","Product Property {Klient.v03.DeliveryDetail}","Product Property {Klient.v03.OrderDetail}","Product Property {Klient.v03.Price}","Product Property {Klient.v03.ShopContext}","Product Property {Klient.v03.Store}","Product Property {Klient.v03.Vat}","Product1 Property {Klient.v03.DeliveryDetail}","Product1 Property {Klient.v03.Price}","ProduktId Property {Klient.v03.DeliveryDetail}","ProduktId Property {Klient.v03.OrderDetail}","ProduktId Property {Klient.v03.Price}","ProduktId Property {Klient.v03.Store}","ProduktId Property {Klient.v03.Vat}","Provider Class","Provider Constructor","Provider Property {Klient.v03.Account}","Provider Property {Klient.v03.Delivery}","Provider Property {Klient.v03.ShopContext}","RegisterWindow Class","RegisterWindow Constructor","ShopContext Class","ShopContext Constructor","ShopContext Property {Klient.v03.OrderDetail}","ShopContext Property {Klient.v03.Price}","ShopContext Property {Klient.v03.Product}","Store Class","Store Property {Klient.v03.Product}","Store Property {Klient.v03.ShopContext}","Store1 Property","Sztuk Property","Telefon Property","Ulica Property","Uprawnienia Property","Vat Class","Vat Property {Klient.v03.Product}","Vat Property {Klient.v03.ShopContext}","Vat1 Property","WartoscVat Property","ZamowienieId Property {Klient.v03.OrderDetail}","ZamowienieId Property {Klient.v03.Order}"
+		);
+		
+		
+		var oldHighlight = 0;
+		var oldKey = "";
+		
+		function get_match(text) {
+		    var ltext = text.toLowerCase();
+		    for(i in words) {
+		        if(words[i].toLowerCase().indexOf(ltext) == "0") {
+		            return words[i];
+		        }
+		    }
+		    return "";
+		}
+		
+		function highlight(keyword) {
+		    if(oldHighlight) oldHighlight.className = "";
+		    var el = parent.frames['zindex'].document.getElementById("w_"+keyword);
+		    el.className="highlighted";
+		    oldHighlight = el;
+		}
+		
+		function check_input(text, matchfun) {
+		    if(text!=oldKey) {
+		        var keyword = matchfun(text);
+		        if(keyword) {       
+		            highlight(keyword);
+		            parent.frames['zindex'].document.getElementById('w_'+keyword).scrollIntoView();
+		        }
+		        oldKey = text;
+		    }
+		}
+	</script>
+</body>
+</html>
+
