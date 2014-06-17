@@ -15,11 +15,13 @@ namespace Klient.v03
     {
         public AccountInfo info;
         public DataGridView products;
+        private ShopContext database;
         private void FillCustomers()
         {
-            using (var db = new ShopContext())
+            try
             {
-                var data1 = db.Customer.Join(db.Account,
+                database = new ShopContext();
+                var data1 = database.Customer.Join(database.Account,
                        cus => cus.KontoId,
                        acc => acc.Id,
                        (cus, acc) => new { Id = cus.Id, Imie = cus.Imie, Nazwisko = cus.Nazwisko, Ulica = cus.Ulica, NrDomu = cus.NrDomu, Miasto = cus.Miasto, KodPocztowy = cus.KodPocztowy, Mail = cus.Mail, Telefon = cus.Telefon, Fax = cus.Fax, Login = acc.NazwaUzytkownika });
@@ -28,6 +30,15 @@ namespace Klient.v03
                 {
                     dataGridView6.Rows.Add(cus.Id, cus.Login, cus.Imie, cus.Nazwisko, cus.Ulica, cus.NrDomu, cus.Miasto, cus.KodPocztowy, cus.Mail, cus.Telefon, cus.Fax);
                 }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
+            }
+            finally
+            {
+                database.Dispose();
             }
             dataGridView6.Sort(dataGridView6.Columns[3], ListSortDirection.Ascending);
             if (dataGridView6.RowCount > 0)
@@ -38,9 +49,10 @@ namespace Klient.v03
 
         private void FillDeliveries()
         {
-            using (var db = new ShopContext())
+            try
             {
-                var data1 = db.Delivery.Join(db.Provider,
+                database = new ShopContext();
+                var data1 = database.Delivery.Join(database.Provider,
                        del => del.DostawcaId,
                        prov => prov.Id,
                        (del, prov) => new { Id = del.DostawcaId, Dostawca = prov.Nazwa, del.Data });
@@ -49,6 +61,15 @@ namespace Klient.v03
                 {
                     dataGridView7.Rows.Add(del.Id, del.Dostawca, del.Data);
                 }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
+            }
+            finally
+            {
+                database.Dispose();
             }
             dataGridView7.Sort(dataGridView7.Columns[2], ListSortDirection.Descending);
             if (dataGridView7.RowCount > 0)
@@ -59,14 +80,24 @@ namespace Klient.v03
 
         private void FillAccounts()
         {
-            using (var db = new ShopContext())
+            try
             {
-                var data1 = db.Account;
+                database = new ShopContext();
+                var data1 = database.Account;
                 dataGridView4.Rows.Clear();
                 foreach (var acc in data1)
                 {
                     dataGridView4.Rows.Add(acc.Id, acc.NazwaUzytkownika, acc.Haslo, acc.Uprawnienia);
                 }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
+            }
+            finally
+            {
+                database.Dispose();
             }
             dataGridView4.Sort(dataGridView4.Columns[1], ListSortDirection.Ascending);
             if (dataGridView4.RowCount > 0)
@@ -77,14 +108,24 @@ namespace Klient.v03
 
         private void FillProviders()
         {
-            using (var db = new ShopContext())
+            try
             {
-                var data1 = db.Provider;
+                database = new ShopContext();
+                var data1 = database.Provider;
                 dataGridView5.Rows.Clear();
                 foreach (var prov in data1)
                 {
                     dataGridView5.Rows.Add(prov.Id, prov.Nazwa, prov.Adres);
                 }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
+            }
+            finally
+            {
+                database.Dispose();
             }
             dataGridView5.Sort(dataGridView5.Columns[1], ListSortDirection.Ascending);
             if (dataGridView5.RowCount > 0)
@@ -95,17 +136,18 @@ namespace Klient.v03
         
         private void FillOrders()
         {
-            using (var db = new ShopContext())
+            try
             {
-                var data1 = db.Order.Join(db.OrderDetail,
+                database = new ShopContext();
+                var data1 = database.Order.Join(database.OrderDetail,
                        ord => ord.ZamowienieId,
                        det => det.ZamowienieId,
                        (ord, det) => new { Id = ord.ZamowienieId, DataZamowienia = ord.DataZamowienia, DataZrealizowania = ord.DataZrealizowania, KlientId = ord.KlientId, ProduktId = det.ProduktId, Ilosc = det.Ilosc, MiastoDostawy = det.MiastoDostawy, KodPocztowyDostawy = det.KodPocztowyDostawy, AdresDostawy = det.AdresDostawy })
-                       .Join(db.Customer,
+                       .Join(database.Customer,
                        ord => ord.KlientId,
                        cus => cus.Id,
                        (ord, cus) => new { Id = ord.Id, DataZamowienia = ord.DataZamowienia, DataZrealizowania = ord.DataZrealizowania, KlientId = ord.KlientId, ProduktId = ord.ProduktId, Ilosc = ord.Ilosc, MiastoDostawy = ord.MiastoDostawy, KodPocztowyDostawy = ord.KodPocztowyDostawy, AdresDostawy = ord.AdresDostawy, Imie = cus.Imie, Nazwisko = cus.Nazwisko })
-                       .Join(db.Product,
+                       .Join(database.Product,
                        ord => ord.ProduktId,
                        pro => pro.Id,
                        (ord, pro) => new { Id = ord.Id, DataZamowienia = ord.DataZamowienia, DataZrealizowania = ord.DataZrealizowania, KlientId = ord.KlientId, ProduktId = ord.ProduktId, Ilosc = ord.Ilosc, MiastoDostawy = ord.MiastoDostawy, KodPocztowyDostawy = ord.KodPocztowyDostawy, AdresDostawy = ord.AdresDostawy, Imie = ord.Imie, Nazwisko = ord.Nazwisko, NazwaProduktu = pro.Nazwa });
@@ -114,6 +156,15 @@ namespace Klient.v03
                 {
                     dataGridView3.Rows.Add(ord.Id, ord.NazwaProduktu, ord.Ilosc, ord.DataZamowienia, ord.DataZrealizowania, ord.Imie + " " + ord.Nazwisko, ord.AdresDostawy + ", " + ord.KodPocztowyDostawy + " " + ord.MiastoDostawy);
                 }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
+            }
+            finally
+            {
+                database.Dispose();
             }
             dataGridView3.Sort(dataGridView3.Columns[3], ListSortDirection.Descending);
             if (dataGridView3.RowCount > 0)
@@ -125,15 +176,25 @@ namespace Klient.v03
 
         private void FillCategory()
         {
-            using (var db = new ShopContext())
+            try
             {
-                var data1 = db.Category;
+                database = new ShopContext();
+                var data1 = database.Category;
                 dataGridView2.Rows.Clear();
                 dataGridView2.Rows.Add(0, "<wszystko>");
                 foreach (var cat in data1)
                 {
                     dataGridView2.Rows.Add(cat.Id, cat.Nazwa);
                 }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
+            }
+            finally
+            {
+                database.Dispose();
             }
             dataGridView2.Sort(dataGridView2.Columns[1], ListSortDirection.Ascending);
             if (dataGridView2.RowCount > 0)
@@ -143,21 +204,22 @@ namespace Klient.v03
         }
         private void FillProduct()
         {
-            using (var db = new ShopContext())
+            try
             {
-                var data1 = db.Product.Join(db.Price.Where(x => x.Do == null),
+                database = new ShopContext();
+                var data1 = database.Product.Join(database.Price.Where(x => x.Do == null),
                        pro => pro.Id,
                        pri => pri.ProduktId,
                        (pro, pri) => new { Id = pro.Id, IdKategorii = pro.KategoriaId, Product = pro.Nazwa, Price = pri.Cena, IdCeny = pri.CenaId })
-                       .Join(db.Category,
+                       .Join(database.Category,
                        pro => pro.IdKategorii,
                        cat => cat.Id,
                        (pro, cat) => new { Id = pro.Id, Product = pro.Product, Kategoria = cat.Nazwa, Price = pro.Price, IdCeny = pro.IdCeny, IdKategorii = pro.IdKategorii })
-                       .Join(db.Vat.Where(z => z.Do == null),
+                       .Join(database.Vat.Where(z => z.Do == null),
                        pro => pro.Id,
                        v => v.ProduktId,
                        (pro, v) => new { Id = pro.Id, Product = pro.Product, Kategoria = pro.Kategoria, Price = pro.Price, Vat = v.WartoscVat, IdCeny = pro.IdCeny, IdKategorii = pro.IdKategorii, IdVat = v.Id })
-                       .Join(db.Store,
+                       .Join(database.Store,
                        pro => pro.Id,
                        s => s.ProduktId,
                        (pro, s) => new { Id = pro.Id, Product = pro.Product, Kategoria = pro.Kategoria, Price = pro.Price, Vat = pro.Vat, Dostępnych = s.IloscDostepnych, Zamówionych = s.IloscZamowionych, IdKategorii = pro.IdKategorii, IdCeny = pro.IdCeny, IdVat = pro.IdVat });
@@ -166,6 +228,15 @@ namespace Klient.v03
                 {
                     dataGridView1.Rows.Add(prod.Id, prod.Product, prod.Kategoria, prod.Price, prod.Vat, prod.Dostępnych, prod.Zamówionych, prod.IdKategorii, prod.IdCeny, prod.IdVat);
                 }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
+            }
+            finally
+            {
+                database.Dispose();
             }
             dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);
             if (dataGridView1.RowCount > 0)
@@ -176,21 +247,22 @@ namespace Klient.v03
 
         private void FillProductCat(int idCat)
         {
-            using (var db = new ShopContext())
+            try
             {
-                var data1 = db.Product.Join(db.Price.Where(x => x.Do == null),
+                database = new ShopContext();
+                var data1 = database.Product.Join(database.Price.Where(x => x.Do == null),
                        pro => pro.Id,
                        pri => pri.ProduktId,
                        (pro, pri) => new { Id = pro.Id, IdKategorii = pro.KategoriaId, Product = pro.Nazwa, Price = pri.Cena })
-                       .Join(db.Category.Where(x => x.Id==idCat),
+                       .Join(database.Category.Where(x => x.Id == idCat),
                        pro => pro.IdKategorii,
                        cat => cat.Id,
                        (pro, cat) => new { Id = pro.Id, Product = pro.Product, Kategoria = cat.Nazwa, Price = pro.Price })
-                       .Join(db.Vat.Where(z => z.Do == null),
+                       .Join(database.Vat.Where(z => z.Do == null),
                        pro => pro.Id,
                        v => v.ProduktId,
                        (pro, v) => new { Id = pro.Id, Product = pro.Product, Kategoria = pro.Kategoria, Price = pro.Price, Vat = v.WartoscVat })
-                       .Join(db.Store,
+                       .Join(database.Store,
                        pro => pro.Id,
                        s => s.ProduktId,
                        (pro, s) => new { Id = pro.Id, Product = pro.Product, Kategoria = pro.Kategoria, Price = pro.Price, Vat = pro.Vat, Dostępnych = s.IloscDostepnych, Zamówionych = s.IloscZamowionych });
@@ -199,6 +271,15 @@ namespace Klient.v03
                 {
                     dataGridView1.Rows.Add(prod.Id, prod.Product, prod.Kategoria, prod.Price, prod.Vat, prod.Dostępnych, prod.Zamówionych);
                 }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
+            }
+            finally
+            {
+                database.Dispose();
             }
             dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);
             if (dataGridView1.RowCount > 0)
@@ -226,7 +307,7 @@ namespace Klient.v03
             FillDeliveries();
             MessageBox.Show("Zalogowano jako \"" + info.login + "\", poziom uprawnień:" + info.privilages);
         } 
-
+        /*
         public bool InsertNewCategory(string _Nazwa)
         {
             using (var db = new ShopContext())
@@ -248,59 +329,68 @@ namespace Klient.v03
                     return false;
                 }
             }
-        }
+        }*/
 
         public bool DeleteCategory(int _Id)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
-                {
-                    var cat = db.Category.First(x => x.Id == _Id);
-                    db.Category.Remove(cat);
-                    db.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                database = new ShopContext();
+                var cat = database.Category.First(x => x.Id == _Id);
+                database.Category.Remove(cat);
+                database.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
+            }
+            finally
+            {
+                database.Dispose();
             }
         }
 
         public bool DeleteProvider(int _Id)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
-                {
-                    var prov = db.Provider.First(x => x.Id == _Id);
-                    db.Provider.Remove(prov);
-                    db.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                database = new ShopContext();
+                var prov = database.Provider.First(x => x.Id == _Id);
+                database.Provider.Remove(prov);
+                database.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
+            }
+            finally
+            {
+                database.Dispose();
             }
         }
 
         public bool DeleteProduct(int _Id)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
-                {
-                    var pro = db.Product.First(x => x.Id==_Id);
-                    db.Product.Remove(pro);
-                    db.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                database = new ShopContext();
+                var pro = database.Product.First(x => x.Id == _Id);
+                database.Product.Remove(pro);
+                database.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
+            }
+            finally
+            {
+                database.Dispose();
             }
         }
 
@@ -316,7 +406,6 @@ namespace Klient.v03
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
             AddingWindow adding = new AddingWindow(/*dataGridView1*/);
             adding.ShowDialog();
             if (adding.DialogResult == DialogResult.OK)

@@ -18,19 +18,22 @@ namespace Klient.v03
         {
             try
             {
-                using (var db = new ShopContext())
+                database = new ShopContext();
+                var data1 = database.Category;
+                dataGridView1.Rows.Clear();
+                foreach (var cat in data1)
                 {
-                    var data1 = db.Category;
-                    dataGridView1.Rows.Clear();
-                    foreach (var cat in data1)
-                    {
-                        dataGridView1.Rows.Add(cat.Id, cat.Nazwa);
-                    }
+                    dataGridView1.Rows.Add(cat.Id, cat.Nazwa);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 MessageBox.Show("Błąd uzyskiwania danych z bazy");
+            }
+            finally
+            {
+                database.Dispose();
             }
         }
 
@@ -43,24 +46,21 @@ namespace Klient.v03
 
         public int InsertNewProduct(string _Nazwa, int _KategoriaId)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Product ProductToInsert = new Product()
                 {
-                    Product ProductToInsert = new Product()
-                    {
-                        Nazwa = _Nazwa,
-                        KategoriaId = _KategoriaId
-                    };
-
-                    db.Product.Add(ProductToInsert);
-                    db.SaveChanges();
-                    return ProductToInsert.Id;
-                }
-                catch
-                {
-                    return -1;
-                }
+                    Nazwa = _Nazwa,
+                    KategoriaId = _KategoriaId
+                };
+                database.Product.Add(ProductToInsert);
+                database.SaveChanges();
+                return ProductToInsert.Id;
+            }
+            catch(Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return -1;
             }
         }
 
@@ -79,8 +79,9 @@ namespace Klient.v03
                 database.Price.Add(PriceToInsert);
                 return true;
             }
-            catch
+            catch(Exception e)
             {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 return false;
             }
         }
@@ -99,8 +100,9 @@ namespace Klient.v03
                 database.Price.Add(PriceToInsert);
                 return true;
             }
-            catch
+            catch(Exception e)
             {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 return false;
             }
         }
@@ -120,8 +122,9 @@ namespace Klient.v03
                 database.Vat.Add(VatToInsert);
                 return true;
             }
-            catch
+            catch(Exception e)
             {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 return false;
             }
         }
@@ -140,8 +143,9 @@ namespace Klient.v03
                     database.Vat.Add(VatToInsert);
                     return true;
                 }
-                catch
+                catch(Exception e)
                 {
+                    System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                     return false;
                 }
         }
@@ -160,8 +164,9 @@ namespace Klient.v03
                 database.Store.Add(StoreToInsert);
                 return true;
             }
-            catch
+            catch(Exception e)
             {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 return false;
             }
         }
@@ -176,8 +181,9 @@ namespace Klient.v03
             {
                 cat = (int)dataGridView1.CurrentRow.Cells[0].Value;
             }
-            catch
+            catch(Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 MessageBox.Show("Niepoprawna kategoria");
                 return;
             }
@@ -185,8 +191,9 @@ namespace Klient.v03
             {
                 price = Convert.ToDouble(textBox2.Text);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 MessageBox.Show(textBox2.Text+" nie jest poprawną ceną");
                 return;
             }
@@ -194,8 +201,9 @@ namespace Klient.v03
             {
                 vat = Convert.ToInt32(textBox3.Text);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 MessageBox.Show(textBox3.Text + " nie jest poprawną stawką vat");
                 return;
             }
@@ -203,8 +211,9 @@ namespace Klient.v03
             {
                 availble = Convert.ToInt32(textBox4.Text);
             }
-            catch
+            catch(Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 MessageBox.Show(textBox4.Text + " nie jest poprawną liczbą");
                 return;
             }
@@ -218,27 +227,32 @@ namespace Klient.v03
                 MessageBox.Show("Cena powinna być dodatnia");
                 return;
             }
-            database = new ShopContext();
-            int productId=InsertNewProduct(textBox1.Text, cat);
-            if (productId > 0 && InsertNewPrice(productId, DateTime.Now, price) &&
-                InsertNewVat(productId, DateTime.Now, vat) &&
-                InsertNewStore(productId, availble, 0))
+            try
             {
-                try
+                database = new ShopContext();
+                int productId = InsertNewProduct(textBox1.Text, cat);
+                if (productId > 0 && InsertNewPrice(productId, DateTime.Now, price) &&
+                    InsertNewVat(productId, DateTime.Now, vat) &&
+                    InsertNewStore(productId, availble, 0))
                 {
                     database.SaveChanges();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Błąd zapisu do bazy");
-                    return;
+                    MessageBox.Show("Wystąpił problem z dodawaniem produktu");
                 }
-                this.DialogResult = DialogResult.OK;
-                this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Wystąpił problem z dodawaniem produktu");
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd zapisu do bazy");
+                return;
+            }
+            finally
+            {
+                database.Dispose();
             }
         }
 

@@ -20,18 +20,17 @@ namespace Klient.v03
         {
             try
             {
-                using (var db = new ShopContext())
+                database = new ShopContext();
+                var data1 = database.Category;
+                dataGridView1.Rows.Clear();
+                foreach (var cat in data1)
                 {
-                    var data1 = db.Category;
-                    dataGridView1.Rows.Clear();
-                    foreach (var cat in data1)
-                    {
-                        dataGridView1.Rows.Add(cat.Id, cat.Nazwa);
-                    }
+                    dataGridView1.Rows.Add(cat.Id, cat.Nazwa);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 MessageBox.Show("Błąd uzyskiwania danych z bazy");
             }
         }
@@ -75,8 +74,9 @@ namespace Klient.v03
                 }
                 return true;
             }
-            catch
+            catch (Exception e)
             {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 return false;
             }
         }
@@ -99,8 +99,9 @@ namespace Klient.v03
                 }
                 return true;
             }
-            catch
+            catch (Exception e)
             {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 return false;
             }
         }
@@ -109,7 +110,7 @@ namespace Klient.v03
         {
             try
             {
-                Vat vat = db.Vat.First(x => x.Id == _IdVat);
+                Vat vat = database.Vat.First(x => x.Id == _IdVat);
                 if (vat.WartoscVat != _WartoscVat)
                 {
                     vat.Do = _Od;
@@ -120,35 +121,34 @@ namespace Klient.v03
                         WartoscVat = _WartoscVat
                     };
 
-                    db.Vat.Add(VatToInsert);
-                    db.SaveChanges();
+                    database.Vat.Add(VatToInsert);
+                    database.SaveChanges();
                 }
                 return true;
             }
-            catch
+            catch (Exception e)
             {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 return false;
             }
         }
 
         public bool EditAvail(int _ProduktId, int _ile)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Store pr = database.Store.First(x => x.ProduktId == _ProduktId);
+                if (pr.IloscDostepnych != _ile)
                 {
-                    Store pr = db.Store.First(x => x.ProduktId == _ProduktId);
-                    if (pr.IloscDostepnych != _ile)
-                    {
-                        pr.IloscDostepnych = _ile;
-                        db.SaveChanges();
-                    }
-                    return true;
+                    pr.IloscDostepnych = _ile;
+                    database.SaveChanges();
                 }
-                catch
-                {
-                    return false;
-                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
             }
         }
 
@@ -162,8 +162,9 @@ namespace Klient.v03
             {
                 cat = (int)dataGridView1.CurrentRow.Cells[0].Value;
             }
-            catch
+            catch (Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 MessageBox.Show("Niepoprawna kategoria");
                 return;
             }
@@ -171,8 +172,9 @@ namespace Klient.v03
             {
                 price = Convert.ToDouble(textBox2.Text);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 MessageBox.Show(textBox2.Text+" nie jest poprawną ceną");
                 return;
             }
@@ -180,8 +182,9 @@ namespace Klient.v03
             {
                 vat = Convert.ToInt32(textBox3.Text);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 MessageBox.Show(textBox3.Text + " nie jest poprawną stawką vat");
                 return;
             }
@@ -189,8 +192,9 @@ namespace Klient.v03
             {
                 availble = Convert.ToInt32(textBox4.Text);
             }
-            catch
+            catch (Exception ex)
             {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
                 MessageBox.Show(textBox4.Text + " nie jest poprawną liczbą");
                 return;
             }
@@ -199,18 +203,33 @@ namespace Klient.v03
                 MessageBox.Show(textBox4.Text + " to mniej niż w tym momencie jest zamówionych");
                 return;
             }
-            if (
-                EditProduct((int)row.Cells[0].Value, cat, textBox1.Text) &&
-                EditPrice((int)row.Cells[8].Value, (int)row.Cells[0].Value, DateTime.Now, price) &&
-                EditVat((int)row.Cells[9].Value, (int)row.Cells[0].Value, DateTime.Now, vat) &&
-                EditAvail((int)row.Cells[0].Value, availble))
+            try
             {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                database = new ShopContext();
+                if (
+                    EditProduct((int)row.Cells[0].Value, cat, textBox1.Text) &&
+                    EditPrice((int)row.Cells[8].Value, (int)row.Cells[0].Value, DateTime.Now, price) &&
+                    EditVat((int)row.Cells[9].Value, (int)row.Cells[0].Value, DateTime.Now, vat) &&
+                    EditAvail((int)row.Cells[0].Value, availble))
+                {
+                    database.SaveChanges();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wystąpił problem z edytowaniem produktu");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Wystąpił problem z edytowaniem produktu");
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd zapisu do bazy");
+                return;
+            }
+            finally
+            {
+                database.Dispose();
             }
         }
 
