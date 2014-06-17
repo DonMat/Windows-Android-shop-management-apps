@@ -1,0 +1,11 @@
+c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\bin\Debug\Klient.v02.exe
+c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\bin\Debug\Klient.v02.pdb
+c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.Form1.resources
+c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.Properties.Resources.resources
+c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.csproj.GenerateResource.Cache
+c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.exe
+c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.pdb
+c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.Form2.resources
+c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.Form3.resources
+C:\Users\Krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.csprojResolveAssemblyReference.cache
+C:\Users\Krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.Form4.resources
