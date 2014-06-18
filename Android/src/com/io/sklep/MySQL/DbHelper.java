@@ -12,10 +12,10 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 public class DbHelper extends AsyncTask<Connection, Void, Connection> {
-	private final String dbName="chmielek_test";
-	private final String dbUser="chmielek_Android";
+	private final String dbName="chmielek_sklep";
+	private final String dbUser="chmielek_sklep";
 	private final String dbHost="baza.projekt-io.tk";
-	private final String dbPass="test";
+	private final String dbPass="nvh3dHZ5";
 	private final String dbPort="3306";
 	ProgressDialog progres;
 	private java.sql.Connection conn;

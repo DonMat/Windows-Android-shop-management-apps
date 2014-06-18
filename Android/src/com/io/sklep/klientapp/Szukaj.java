@@ -8,21 +8,21 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.NumberPicker;
+import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -75,9 +75,9 @@ public class Szukaj extends Fragment implements OnItemSelectedListener,
 			long arg3) {
 		TextView t = (TextView) arg1;
 		String a = t.getText().toString();
-		int p = lista_kat.indexOf(a) + 1;
-		if (p != 0) {
-			GetProdukty con = new GetProdukty(p, getActivity());
+		int p = lista_kat.indexOf(a);
+		if (p >-1) {
+			GetProdukty con = new GetProdukty(Integer.parseInt(lista_kat_id.get(p)), getActivity());
 			try {
 				produkt = con.execute().get();
 			} catch (InterruptedException e) {

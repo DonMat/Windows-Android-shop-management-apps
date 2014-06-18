@@ -17,7 +17,7 @@ import com.io.sklep.Adapters.Produkt.Zamowienie;
 import com.io.sklep.Adapters.Produkt.ZamowienieAdapter;
 import com.io.sklep.MySQL.GetZamowienia;
  
-public class Zamowienia   extends Fragment {
+public class Zamowienia extends Fragment {
  
       ImageView icon;
       TextView nazwa;

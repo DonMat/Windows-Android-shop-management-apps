@@ -3,6 +3,7 @@ package com.io.sklep.klientapp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -25,6 +26,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import com.io.sklep.MD5.MD5;
 import com.io.sklep.MySQL.GetKategorie;
 import com.io.sklep.MySQL.KategoriaElem;
