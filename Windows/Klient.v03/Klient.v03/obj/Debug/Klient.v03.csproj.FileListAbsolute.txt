@@ -39,3 +39,6 @@ C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.Add
 C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingProvWindow.resources
 C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCatWindow.resources
 C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingProvWindow.resources
+G:\GIT\Windows\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe.config
+G:\GIT\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.exe
+G:\GIT\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.pdb

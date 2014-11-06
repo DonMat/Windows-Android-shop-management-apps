@@ -1,7 +1,7 @@
 projekt
 =======
 
-Projekt IO
+Projekt MO
 
 === Klient v3.0 ===
 
