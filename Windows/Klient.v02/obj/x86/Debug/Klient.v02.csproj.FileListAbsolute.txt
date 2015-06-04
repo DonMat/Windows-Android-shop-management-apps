@@ -9,3 +9,5 @@ c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x
 c:\users\krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.Form3.resources
 C:\Users\Krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.csprojResolveAssemblyReference.cache
 C:\Users\Krzyn\documents\visual studio 2010\Projects\Klient.v02\Klient.v02\obj\x86\Debug\Klient.v02.Form4.resources
+G:\GIT\projekt\Windows\Klient.v02\obj\x86\Debug\Klient.v02.exe
+G:\GIT\projekt\Windows\Klient.v02\obj\x86\Debug\Klient.v02.pdb

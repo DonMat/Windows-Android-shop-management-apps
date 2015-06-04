@@ -46,6 +46,8 @@ namespace Klient.v03
         {
             bool flag = false;
             bool internet = true;
+            MessageBox.Show(CalculateMD5Hash(maskedTextBox1.Text).ToLower());
+            Console.WriteLine(CalculateMD5Hash(maskedTextBox1.Text).ToLower());
             using (var db = new ShopContext())
             {
                 try
@@ -62,10 +64,11 @@ namespace Klient.v03
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception en)
                 {
                     internet = false;
                     MessageBox.Show("Błąd w logowaniu");
+                    MessageBox.Show(en.Message);
                 }
             }
             if (flag)
