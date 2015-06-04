@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item 
+        android:id="@+id/szukaj" 
+        android:title="@string/szukaj" 
+        android:icon="@drawable/ic_action_search_dark"
+        android:showAsAction="always"
+        
+    />
+    
+
+</menu>
+<!-- From: file:/G:/MgR_Sklep_App/app/src/main/res/menu/main_action.xml -->

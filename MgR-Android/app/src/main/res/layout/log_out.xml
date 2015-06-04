@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/lImienazw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/imienazwisko"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/ulicadom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/adres"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/kodmiasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/miasto"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/telef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tel"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/loadProd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="LogOut"
+        android:text="@string/wyloguj" />
+
+</LinearLayout>

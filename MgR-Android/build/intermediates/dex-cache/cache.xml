@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="G:\MgR_Sklep_App\app\libs\mysql-connector-java-5.1.30-bin.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="50aa5073896609b6b8c5e484c7671449daccf94c">
+        <dex dex="G:\MgR_Sklep_App\app\build\intermediates\pre-dexed\debug\mysql-connector-java-5.1.30-bin-abc0d762dd41f585f6ed1df1ec0aa9c029b79443.jar" />
+    </item>
+    <item
+        jar="F:\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="G:\MgR_Sklep_App\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-04ebd5be4fc1deac57340eddb991fde4583e64d4.jar" />
+    </item>
+
+</items>

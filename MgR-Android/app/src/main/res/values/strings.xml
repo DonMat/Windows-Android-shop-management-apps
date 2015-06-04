@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MgR Sklep</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Otworz">Otwórz</string>
+    <string name="Zamknij">Zamknij</string>
+    <string name="podaj_login">Podaj swój login</string>
+    <string name="haslo">Podaj hasło</string>
+    <string name="zaloguj">Zaloguj</string>
+    <string name="zalogujGosc">Test Login</string>
+    <string name="zalogowany">>  </string>
+    <string name="ObZalogow">Obecnie zalogowany jako: \n</string>
+    <string name="zleHaslo">Błędne hasło</string>
+    <string name="wyloguj">Wyloguj</string>
+    <string name="testHas">Wczytywanie danych..</string>
+    <string name="zl">" zł"</string>
+    <string name="szt">" szt."</string>
+    <string name="na_stanie_">"W magazynie: "</string>
+    <string name="brak_internetu_">Brak internetu&#8230;</string>
+    <string name="sprawd_po_aczenie_z_sieci_">Sprawdź połaczenie z siecią.</string>
+    <string name="szukaj">Szukaj</string>
+    <string name="kategorie">Trwa wczytywanie kategorii</string>
+    <string name="produkty">Produkty</string>
+    <string name="wczytaj">Trwa ładowanie danych</string>
+    <string name="zamow">Zamów</string>
+    <string name="podaj_liczb_sztuk">Podaj liczbę sztuk</string>
+    <string name="anuluj">Anuluj</string>
+    <string name="zam_w">Zamów</string>
+    <string name="nie_zalogowany">\nNie jesteś zalogowany</string>
+    <string name="zam_wienie_nr_">"Zamówienie nr: "</string>
+    <string name="dostawa">"Dostawa: "</string>
+    <string name="rezygnuj">Rezygnuję</string>
+    <string name="anulowano">Anulowano</string>
+    <string name="zamowiono">"\nZamówiono: "</string>
+    <string name="_zrealizowano_">"\nZrealizowano: "</string>
+    <string name="zaloguj_si_aby_z_o_y_zam_wienie">Zaloguj się aby złożyć zamówienie</string>
+    <string name="skladanieZam">Trwa składanie zamówienia</string>
+    <string name="zam_wienia">Zamówienia</string>
+    <string name="retry">Spróbuj ponownie</string>
+    <string name="retryInfo">Błąd pobierania danych \nSpróbuj ponownie</string>
+    <string name="zalogowano">Pomyślnie zalogowano!</string>
+    <string name="imienazwisko">ImieNazwisko</string>
+    <string name="adres">adres</string>
+    <string name="miasto">miasto</string>
+    <string name="email">Email</string>
+    <string name="tel">tel</string>
+</resources>
