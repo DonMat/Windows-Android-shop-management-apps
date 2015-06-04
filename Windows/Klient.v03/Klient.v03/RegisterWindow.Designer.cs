@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterWindow));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -53,8 +56,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +109,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(174, 71);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(268, 20);
             this.textBox3.TabIndex = 2;
             // 
@@ -115,6 +117,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(174, 45);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(268, 20);
             this.textBox2.TabIndex = 1;
             // 
@@ -155,6 +158,22 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(174, 227);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(268, 20);
+            this.textBox12.TabIndex = 18;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(7, 97);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 13);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Nr domu";
             // 
             // button1
             // 
@@ -294,30 +313,15 @@
             this.textBox4.Size = new System.Drawing.Size(268, 20);
             this.textBox4.TabIndex = 0;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 97);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 13);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "Nr domu";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(174, 227);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(268, 20);
-            this.textBox12.TabIndex = 18;
-            // 
-            // Form3
+            // RegisterWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 414);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form3";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "RegisterWindow";
             this.Text = "Zarejestruj";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -1,20 +1,155 @@
+c:\users\artur\documents\visual studio 2012\Projects\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe.config
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe.config
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe.config
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\Klient.v03.pdb
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\EntityFramework.dll
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\EntityFramework.xml
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csprojResolveAssemblyReference.cache
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.Properties.Resources.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csproj.GenerateResource.Cache
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.exe
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.pdb
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.exe
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csprojResolveAssemblyReference.cache
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.Properties.Resources.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csproj.GenerateResource.Cache
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\Klient.v03.pdb
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\EntityFramework.dll
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\EntityFramework.xml
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.pdb
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.MainWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.LoginWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.ConfirmWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.RegisterWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.MainWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.LoginWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.RegisterWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.ConfirmWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingCatWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCatWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingProvWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingProvWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingCatWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingProvWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCatWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingProvWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingAccWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingAccWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingAccWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingAccWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingDeliveryWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingDeliveryWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingDetailsWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingDetailsWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingOrderWindow.resources
+C:\Users\Artur\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingOrderWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingCustWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingDeliveryWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingDetailsWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingOrderWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingDeliveryWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingDetailsWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingOrderWindow.resources
+C:\Users\Krzyn\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCustWindow.resources
+E:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe.config
+E:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.exe
+E:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.pdb
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe.config
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.exe
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.pdb
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\Klient.v03.pdb
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\EntityFramework.dll
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\bin\Debug\EntityFramework.xml
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csprojResolveAssemblyReference.cache
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingAccWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingCatWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingCustWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingDeliveryWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingDetailsWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingOrderWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingProvWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingAccWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCatWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCustWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingDeliveryWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingDetailsWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingOrderWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingProvWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.MainWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.LoginWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.RegisterWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.ConfirmWindow.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.Properties.Resources.resources
+G:\Dropbox\Projekt-IO\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csproj.GenerateResource.Cache
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe.config
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.exe
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.pdb
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\bin\Debug\Klient.v03.pdb
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\bin\Debug\EntityFramework.dll
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\bin\Debug\EntityFramework.xml
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csprojResolveAssemblyReference.cache
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingAccWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingCatWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingCustWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingDeliveryWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingDetailsWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingOrderWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingProvWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingAccWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCatWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCustWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingDeliveryWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingDetailsWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingOrderWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingProvWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.MainWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.LoginWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.RegisterWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.ConfirmWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.Properties.Resources.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csproj.GenerateResource.Cache
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe.config
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.exe
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.pdb
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\bin\Debug\Klient.v03.pdb
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\bin\Debug\EntityFramework.dll
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\bin\Debug\EntityFramework.xml
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csprojResolveAssemblyReference.cache
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingAccWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingCatWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingCustWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingDeliveryWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingDetailsWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingOrderWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingProvWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingAccWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCatWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCustWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingDeliveryWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingDetailsWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingOrderWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingProvWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.MainWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.LoginWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.RegisterWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.ConfirmWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.Properties.Resources.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csproj.GenerateResource.Cache
 G:\GIT\projekt\Windows\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe.config
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\bin\Debug\Klient.v03.exe
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\bin\Debug\Klient.v03.pdb
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\bin\Debug\EntityFramework.dll
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\bin\Debug\EntityFramework.xml
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csprojResolveAssemblyReference.cache
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingCatWindow.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingProvWindow.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingCatWindow.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingProvWindow.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.MainWindow.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.LoginWindow.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.RegisterWindow.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.AddingWindow.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.EditingWindow.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.ConfirmWindow.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.Properties.Resources.resources
-G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.csproj.GenerateResource.Cache
 G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.exe
 G:\GIT\projekt\Windows\Klient.v03\Klient.v03\obj\Debug\Klient.v03.pdb

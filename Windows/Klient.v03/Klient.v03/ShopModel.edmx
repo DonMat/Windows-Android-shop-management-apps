@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ShopModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ShopModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="Id" />
@@ -53,6 +53,7 @@
           <Property Name="DostawaId" Type="int" Nullable="false" />
           <Property Name="ProduktId" Type="int" Nullable="false" />
           <Property Name="Netto" Type="double" Nullable="false" />
+          <Property Name="Vat" Type="int" Nullable="false" />
           <Property Name="Sztuk" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
@@ -275,18 +276,18 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ShopModelStoreContainer">
-          <EntitySet Name="Account" EntityType="Self.Account" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="Category" EntityType="Self.Category" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="Delivery" EntityType="Self.Delivery" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="DeliveryDetail" EntityType="Self.DeliveryDetail" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="Order" EntityType="Self.Order" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="Price" EntityType="Self.Price" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="Product" EntityType="Self.Product" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="Provider" EntityType="Self.Provider" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="Store" EntityType="Self.Store" Schema="chmielek_sklep" store:Type="Tables" />
-          <EntitySet Name="Vat" EntityType="Self.Vat" Schema="chmielek_sklep" store:Type="Tables" />
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Delivery" EntityType="Self.Delivery" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="DeliveryDetail" EntityType="Self.DeliveryDetail" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Price" EntityType="Self.Price" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Provider" EntityType="Self.Provider" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Vat" EntityType="Self.Vat" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <AssociationSet Name="Customer_ibfk_1" Association="Self.Customer_ibfk_1">
             <End Role="Account" EntitySet="Account" />
             <End Role="Customer" EntitySet="Customer" />
@@ -335,7 +336,7 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="Id" />
@@ -393,6 +394,7 @@
           <Property Name="Sztuk" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Delivery" Relationship="Self.DeliveryDetail_ibfk_1" FromRole="DeliveryDetail" ToRole="Delivery" />
           <NavigationProperty Name="Product" Relationship="Self.DeliveryDetail_ibfk_2" FromRole="DeliveryDetail" ToRole="Product" />
+          <Property Name="Vat" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -689,7 +691,7 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ShopModelStoreContainer" CdmEntityContainer="ShopContext">
           <EntitySetMapping Name="Account">
             <EntityTypeMapping TypeName="ShopModel.Account">
@@ -738,6 +740,7 @@
           <EntitySetMapping Name="DeliveryDetail">
             <EntityTypeMapping TypeName="ShopModel.DeliveryDetail">
               <MappingFragment StoreEntitySet="DeliveryDetail">
+                <ScalarProperty Name="Vat" ColumnName="Vat" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="DostawaId" ColumnName="DostawaId" />
                 <ScalarProperty Name="ProduktId" ColumnName="ProduktId" />
@@ -822,22 +825,22 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
-    <Connection>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-      </DesignerInfoPropertySet>
-    </Connection>
-    <Options>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
-      </DesignerInfoPropertySet>
-    </Options>
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="false" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
-  </Designer>
+    <edmx:Diagrams />
+  </edmx:Designer>
 </edmx:Edmx>

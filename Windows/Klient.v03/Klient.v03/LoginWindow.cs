@@ -19,7 +19,6 @@ namespace Klient.v03
             InitializeComponent();
             AcceptButton = button2;
             DialogResult = DialogResult.Cancel;
-            //MessageBox.Show(CalculateMD5Hash("no"));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,11 +45,9 @@ namespace Klient.v03
         {
             bool flag = false;
             bool internet = true;
-            MessageBox.Show(CalculateMD5Hash(maskedTextBox1.Text).ToLower());
-            Console.WriteLine(CalculateMD5Hash(maskedTextBox1.Text).ToLower());
-            using (var db = new ShopContext())
+            try
             {
-                try
+                using (var db = new ShopContext())
                 {
                     foreach (var entry in db.Account)
                     {
@@ -64,12 +61,12 @@ namespace Klient.v03
                         }
                     }
                 }
-                catch (Exception en)
-                {
-                    internet = false;
-                    MessageBox.Show("Błąd w logowaniu");
-                    MessageBox.Show(en.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                //System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                internet = false;
+                MessageBox.Show("Błąd w logowaniu");
             }
             if (flag)
             {

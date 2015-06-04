@@ -9,8 +9,24 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Klient.v03</RootNamespace>
     <AssemblyName>Klient.v03</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +47,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -55,11 +73,41 @@
       <DependentUpon>ShopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AccountInfo.cs" />
+    <Compile Include="AddingAccWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingAccWindow.Designer.cs">
+      <DependentUpon>AddingAccWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddingCatWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddingCatWindow.Designer.cs">
       <DependentUpon>AddingCatWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddingCustWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingCustWindow.Designer.cs">
+      <DependentUpon>AddingCustWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddingDeliveryWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingDeliveryWindow.Designer.cs">
+      <DependentUpon>AddingDeliveryWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddingDetailsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingDetailsWindow.Designer.cs">
+      <DependentUpon>AddingDetailsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddingOrderWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingOrderWindow.Designer.cs">
+      <DependentUpon>AddingOrderWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="AddingProvWindow.cs">
       <SubType>Form</SubType>
@@ -79,11 +127,41 @@
     <Compile Include="DeliveryDetail.cs">
       <DependentUpon>ShopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EditingAccWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingAccWindow.Designer.cs">
+      <DependentUpon>EditingAccWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditingCatWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditingCatWindow.Designer.cs">
       <DependentUpon>EditingCatWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditingCustWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingCustWindow.Designer.cs">
+      <DependentUpon>EditingCustWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditingDeliveryWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingDeliveryWindow.Designer.cs">
+      <DependentUpon>EditingDeliveryWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditingDetailsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingDetailsWindow.Designer.cs">
+      <DependentUpon>EditingDetailsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditingOrderWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingOrderWindow.Designer.cs">
+      <DependentUpon>EditingOrderWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="EditingProvWindow.cs">
       <SubType>Form</SubType>
@@ -165,14 +243,44 @@
     <Compile Include="Vat.cs">
       <DependentUpon>ShopModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddingAccWindow.resx">
+      <DependentUpon>AddingAccWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddingCatWindow.resx">
       <DependentUpon>AddingCatWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddingCustWindow.resx">
+      <DependentUpon>AddingCustWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddingDeliveryWindow.resx">
+      <DependentUpon>AddingDeliveryWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddingDetailsWindow.resx">
+      <DependentUpon>AddingDetailsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddingOrderWindow.resx">
+      <DependentUpon>AddingOrderWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddingProvWindow.resx">
       <DependentUpon>AddingProvWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditingAccWindow.resx">
+      <DependentUpon>EditingAccWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditingCatWindow.resx">
       <DependentUpon>EditingCatWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingCustWindow.resx">
+      <DependentUpon>EditingCustWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingDeliveryWindow.resx">
+      <DependentUpon>EditingDeliveryWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingDetailsWindow.resx">
+      <DependentUpon>EditingDetailsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingOrderWindow.resx">
+      <DependentUpon>EditingOrderWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditingProvWindow.resx">
       <DependentUpon>EditingProvWindow.cs</DependentUpon>
@@ -239,6 +347,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

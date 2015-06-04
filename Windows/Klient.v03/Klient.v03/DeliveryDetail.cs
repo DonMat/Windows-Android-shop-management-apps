@@ -19,30 +19,9 @@ namespace Klient.v03
         public int ProduktId { get; set; }
         public double Netto { get; set; }
         public int Sztuk { get; set; }
+        public int Vat { get; set; }
     
         public virtual Delivery Delivery { get; set; }
         public virtual Product Product { get; set; }
-
-        public Delivery Delivery1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public Product Product1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
     }
 }

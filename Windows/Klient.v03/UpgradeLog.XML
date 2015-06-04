@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Klient.v03">
+</Property><Property Name="Solution File" Value="E:\Dropbox\Projekt-IO\Klient.v03\Klient.v03.sln">
+</Property><Property Name="Date" Value="3 października 2014">
+</Property><Property Name="Time" Value="02:35">
+</Property></Properties><Event ErrorLevel="0" Project="Klient.v03" Source="Klient.v03\Klient.v03.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="Klient.v03" Source="Klient.v03\Klient.v03.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="Klient.v03.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Klient.v03.sln" Description="Converted">
+</Event></UpgradeLog>

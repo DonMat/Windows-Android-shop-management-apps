@@ -160,7 +160,7 @@ namespace Klient.v03
             int availble;
             try
             {
-                cat = (int)dataGridView1.CurrentRow.Cells[0].Value;
+                cat = (int)dataGridView1.SelectedCells[0].Value;
             }
             catch (Exception ex)
             {

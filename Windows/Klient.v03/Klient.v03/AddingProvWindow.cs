@@ -12,6 +12,8 @@ namespace Klient.v03
 {
     public partial class AddingProvWindow : Form
     {
+        private ShopContext database;
+
         public AddingProvWindow()
         {
             InitializeComponent();
@@ -19,37 +21,49 @@ namespace Klient.v03
 
         public bool InsertNewProvider(string _nazwa, string _adres)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Provider ProviderToInsert = new Provider()
                 {
-                    Provider ProviderToInsert = new Provider()
-                    {
-                        Nazwa = _nazwa,
-                        Adres = _adres
-                    };
+                    Nazwa = _nazwa,
+                    Adres = _adres
+                };
 
-                    db.Provider.Add(ProviderToInsert);
-                    db.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                database.Provider.Add(ProviderToInsert);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (InsertNewProvider(textBox1.Text, textBox2.Text))
+            try
             {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                database = new ShopContext();
+                if (InsertNewProvider(textBox1.Text, textBox2.Text))
+                {
+                    database.SaveChanges();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wystąpił problem z dodawaniem dostawcy");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Wystąpił problem z dodawaniem produktu");
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd zapisu do bazy");
+                return;
+            }
+            finally
+            {
+                database.Dispose();
             }
         }
 

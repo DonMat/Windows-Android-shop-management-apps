@@ -1,0 +1,60 @@
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\bin\Release\Klient.v03.exe.config
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\bin\Release\Klient.v03.exe
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\bin\Release\Klient.v03.pdb
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\bin\Release\EntityFramework.dll
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\bin\Release\EntityFramework.xml
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingAccWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingCatWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingCustWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingDeliveryWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingDetailsWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingOrderWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingProvWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingAccWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingCatWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingCustWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingDeliveryWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingDetailsWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingOrderWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingProvWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.MainWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.LoginWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.RegisterWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.ConfirmWindow.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.Properties.Resources.resources
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.csproj.GenerateResource.Cache
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.exe
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.pdb
+C:\Users\Krzysztof\Downloads\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.csprojResolveAssemblyReference.cache
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\bin\Release\Klient.v03.exe.config
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.exe
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.pdb
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\bin\Release\Klient.v03.exe
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\bin\Release\Klient.v03.pdb
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\bin\Release\EntityFramework.dll
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\bin\Release\EntityFramework.xml
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.csprojResolveAssemblyReference.cache
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingAccWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingCatWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingCustWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingDeliveryWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingDetailsWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingOrderWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingProvWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingAccWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingCatWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingCustWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingDeliveryWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingDetailsWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingOrderWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingProvWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.MainWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.LoginWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.RegisterWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.AddingWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.EditingWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.ConfirmWindow.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.Properties.Resources.resources
+C:\Users\Mateusz\Desktop\Klient.v03 (1)\Klient.v03\Klient.v03\Klient.v03\obj\Release\Klient.v03.csproj.GenerateResource.Cache

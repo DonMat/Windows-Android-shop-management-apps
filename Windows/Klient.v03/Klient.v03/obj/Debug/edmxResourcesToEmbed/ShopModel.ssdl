@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ShopModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="ShopModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityType Name="Account">
     <Key>
       <PropertyRef Name="Id" />
@@ -48,6 +48,7 @@
     <Property Name="DostawaId" Type="int" Nullable="false" />
     <Property Name="ProduktId" Type="int" Nullable="false" />
     <Property Name="Netto" Type="double" Nullable="false" />
+    <Property Name="Vat" Type="int" Nullable="false" />
     <Property Name="Sztuk" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Order">
@@ -270,18 +271,18 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ShopModelStoreContainer">
-    <EntitySet Name="Account" EntityType="Self.Account" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="Category" EntityType="Self.Category" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="Delivery" EntityType="Self.Delivery" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="DeliveryDetail" EntityType="Self.DeliveryDetail" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="Order" EntityType="Self.Order" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="Price" EntityType="Self.Price" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="Product" EntityType="Self.Product" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="Provider" EntityType="Self.Provider" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="Store" EntityType="Self.Store" Schema="chmielek_sklep" store:Type="Tables" />
-    <EntitySet Name="Vat" EntityType="Self.Vat" Schema="chmielek_sklep" store:Type="Tables" />
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Delivery" EntityType="Self.Delivery" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DeliveryDetail" EntityType="Self.DeliveryDetail" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Price" EntityType="Self.Price" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Provider" EntityType="Self.Provider" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Vat" EntityType="Self.Vat" Schema="chmielek_sklep" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
     <AssociationSet Name="Customer_ibfk_1" Association="Self.Customer_ibfk_1">
       <End Role="Account" EntitySet="Account" />
       <End Role="Customer" EntitySet="Customer" />

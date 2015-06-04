@@ -12,8 +12,9 @@ namespace Klient.v03
 {
     public partial class EditingProvWindow : Form
     {
-        private DataGridViewRow row;
+        private ShopContext database;
 
+        private DataGridViewRow row;
         public EditingProvWindow(DataGridViewRow _row)
         {
             row = _row;
@@ -29,44 +30,51 @@ namespace Klient.v03
 
         public bool EditProv(int _id, string _nazwa, string _adres)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Provider prov = database.Provider.First(x => x.Id == _id);
+                if (!prov.Nazwa.Equals(_nazwa))
                 {
-                    Provider prov = db.Provider.First(x => x.Id == _id);
-                    if (!prov.Nazwa.Equals(_nazwa))
-                    {
-                        prov.Nazwa = _nazwa;
-                        if (!prov.Adres.Equals(_adres))
-                        {
-                            prov.Adres = _adres;
-                        }
-                        db.SaveChanges();
-                    }
-                    if (!prov.Adres.Equals(_adres))
-                    {
-                        prov.Adres = _adres;
-                        db.SaveChanges();
-                    }
-                    return true;
+                    prov.Nazwa = _nazwa;
                 }
-                catch
+                if (!prov.Adres.Equals(_adres))
                 {
-                    return false;
+                    prov.Adres = _adres;
                 }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (EditProv((int)row.Cells[0].Value, textBox1.Text, textBox2.Text))
+            try
             {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                database = new ShopContext();
+                if (EditProv((int)row.Cells[0].Value, textBox1.Text, textBox2.Text))
+                {
+                    database.SaveChanges();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wystąpił problem z edytowaniem dostawcy");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Wystąpił problem z edytowaniem dostawcy");
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd zapisu do bazy");
+                return;
+            }
+            finally
+            {
+                database.Dispose();
             }
         }
     }

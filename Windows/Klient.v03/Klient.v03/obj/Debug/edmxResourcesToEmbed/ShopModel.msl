@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ShopModelStoreContainer" CdmEntityContainer="ShopContext">
     <EntitySetMapping Name="Account">
       <EntityTypeMapping TypeName="ShopModel.Account">
@@ -48,6 +48,7 @@
     <EntitySetMapping Name="DeliveryDetail">
       <EntityTypeMapping TypeName="ShopModel.DeliveryDetail">
         <MappingFragment StoreEntitySet="DeliveryDetail">
+          <ScalarProperty Name="Vat" ColumnName="Vat" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="DostawaId" ColumnName="DostawaId" />
           <ScalarProperty Name="ProduktId" ColumnName="ProduktId" />

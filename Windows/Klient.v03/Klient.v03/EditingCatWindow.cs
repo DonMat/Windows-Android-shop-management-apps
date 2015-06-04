@@ -12,6 +12,8 @@ namespace Klient.v03
 {
     public partial class EditingCatWindow : Form
     {
+        private ShopContext database;
+
         DataGridViewRow row;
         public EditingCatWindow(DataGridViewRow _row)
         {
@@ -22,35 +24,47 @@ namespace Klient.v03
 
         public bool EditCat(int _id, string _nazwa)
         {
-            using (var db = new ShopContext())
+            try
             {
-                try
+                Category cat = database.Category.First(x => x.Id == _id);
+                if (!cat.Nazwa.Equals(_nazwa))
                 {
-                    Category cat = db.Category.First(x => x.Id == _id);
-                    if (!cat.Nazwa.Equals(_nazwa))
-                    {
-                        cat.Nazwa = _nazwa;
-                        db.SaveChanges();
-                    }
-                    return true;
+                    cat.Nazwa = _nazwa;
                 }
-                catch
-                {
-                    return false;
-                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(EditCat((int)row.Cells[0].Value, textBox1.Text))
+            try
             {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                database = new ShopContext();
+                if (EditCat((int)row.Cells[0].Value, textBox1.Text))
+                {
+                    database.SaveChanges();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wystąpił problem z edytowaniem kategorii");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Wystąpił problem z edytowaniem kategorii");
+                System.Diagnostics.EventLog.WriteEntry(ex.Source, ex.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd zapisu do bazy");
+                return;
+            }
+            finally
+            {
+                database.Dispose();
             }
         }
 

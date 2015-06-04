@@ -1,9 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klient.v03", "Klient.v03\Klient.v03.csproj", "{3326FA83-B623-4175-80B7-F6A787E00898}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E321178D-DA6B-40AE-8FAB-5E2A7BBF04D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klient.v03", "Klient.v03\Klient.v03.csproj", "{3326FA83-B623-4175-80B7-F6A787E00898}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

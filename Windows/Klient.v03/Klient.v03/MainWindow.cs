@@ -24,7 +24,7 @@ namespace Klient.v03
                 var data1 = database.Customer.Join(database.Account,
                        cus => cus.KontoId,
                        acc => acc.Id,
-                       (cus, acc) => new { Id = cus.Id, Imie = cus.Imie, Nazwisko = cus.Nazwisko, Ulica = cus.Ulica, NrDomu = cus.NrDomu, Miasto = cus.Miasto, KodPocztowy = cus.KodPocztowy, Mail = cus.Mail, Telefon = cus.Telefon, Fax = cus.Fax, Login = acc.NazwaUzytkownika });
+                       (cus, acc) => new { Id = cus.KontoId, Imie = cus.Imie, Nazwisko = cus.Nazwisko, Ulica = cus.Ulica, NrDomu = cus.NrDomu, Miasto = cus.Miasto, KodPocztowy = cus.KodPocztowy, Mail = cus.Mail, Telefon = cus.Telefon, Fax = cus.Fax, Login = acc.NazwaUzytkownika });
                 dataGridView6.Rows.Clear();
                 foreach (var cus in data1)
                 {
@@ -55,11 +55,11 @@ namespace Klient.v03
                 var data1 = database.Delivery.Join(database.Provider,
                        del => del.DostawcaId,
                        prov => prov.Id,
-                       (del, prov) => new { Id = del.DostawcaId, Dostawca = prov.Nazwa, del.Data });
+                       (del, prov) => new { Id = del.Id, Dostawca = prov.Nazwa, Data = del.Data, DostawcaId = del.DostawcaId });
                 dataGridView7.Rows.Clear();
                 foreach (var del in data1)
                 {
-                    dataGridView7.Rows.Add(del.Id, del.Dostawca, del.Data);
+                    dataGridView7.Rows.Add(del.Id, del.Dostawca, del.Data, del.DostawcaId);
                 }
             }
             catch (Exception e)
@@ -145,7 +145,7 @@ namespace Klient.v03
                        (ord, det) => new { Id = ord.ZamowienieId, DataZamowienia = ord.DataZamowienia, DataZrealizowania = ord.DataZrealizowania, KlientId = ord.KlientId, ProduktId = det.ProduktId, Ilosc = det.Ilosc, MiastoDostawy = det.MiastoDostawy, KodPocztowyDostawy = det.KodPocztowyDostawy, AdresDostawy = det.AdresDostawy })
                        .Join(database.Customer,
                        ord => ord.KlientId,
-                       cus => cus.Id,
+                       cus => cus.KontoId,
                        (ord, cus) => new { Id = ord.Id, DataZamowienia = ord.DataZamowienia, DataZrealizowania = ord.DataZrealizowania, KlientId = ord.KlientId, ProduktId = ord.ProduktId, Ilosc = ord.Ilosc, MiastoDostawy = ord.MiastoDostawy, KodPocztowyDostawy = ord.KodPocztowyDostawy, AdresDostawy = ord.AdresDostawy, Imie = cus.Imie, Nazwisko = cus.Nazwisko })
                        .Join(database.Product,
                        ord => ord.ProduktId,
@@ -154,7 +154,7 @@ namespace Klient.v03
                 dataGridView3.Rows.Clear();
                 foreach (var ord in data1)
                 {
-                    dataGridView3.Rows.Add(ord.Id, ord.NazwaProduktu, ord.Ilosc, ord.DataZamowienia, ord.DataZrealizowania, ord.Imie + " " + ord.Nazwisko, ord.AdresDostawy + ", " + ord.KodPocztowyDostawy + " " + ord.MiastoDostawy);
+                    dataGridView3.Rows.Add(ord.Id, ord.NazwaProduktu, ord.Ilosc, ord.DataZamowienia, ord.DataZrealizowania, ord.Imie + " " + ord.Nazwisko, ord.AdresDostawy + ", " + ord.KodPocztowyDostawy + " " + ord.MiastoDostawy, ord.ProduktId, ord.KlientId, ord.MiastoDostawy, ord.AdresDostawy, ord.KodPocztowyDostawy);
                 }
             }
             catch (Exception e)
@@ -166,7 +166,7 @@ namespace Klient.v03
             {
                 database.Dispose();
             }
-            dataGridView3.Sort(dataGridView3.Columns[3], ListSortDirection.Descending);
+            dataGridView3.Sort(dataGridView3.Columns[0], ListSortDirection.Descending);
             if (dataGridView3.RowCount > 0)
             {
                 dataGridView3.Rows[0].Selected = true;
@@ -288,6 +288,37 @@ namespace Klient.v03
             }
         }
 
+        private void FillDeliveryDetails(int _dostawaId)
+        {
+            try
+            {
+                database = new ShopContext();
+                var data1 = database.Product.Join(database.DeliveryDetail.Where(x => x.DostawaId == _dostawaId),
+                       pro => pro.Id,
+                       del => del.ProduktId,
+                       (pro, del) => new { Id = del.Id, Nazwa = pro.Nazwa, Netto = del.Netto, Vat = del.Vat, Sztuk = del.Sztuk, DostawaId = del.DostawaId, ProduktId = del.ProduktId});
+                dataGridView8.Rows.Clear();
+                foreach (var prod in data1)
+                {
+                    dataGridView8.Rows.Add(prod.Id, prod.Nazwa, prod.Netto, prod.Vat, prod.Sztuk, prod.DostawaId, prod.ProduktId);
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                MessageBox.Show("Błąd uzyskiwania danych z bazy");
+            }
+            finally
+            {
+                database.Dispose();
+            }
+            dataGridView8.Sort(dataGridView8.Columns[1], ListSortDirection.Ascending);
+            if (dataGridView8.RowCount > 0)
+            {
+                dataGridView8.Rows[0].Selected = true;
+            }
+        }
+
         public MainWindow()
         {
             info = new AccountInfo();
@@ -352,6 +383,27 @@ namespace Klient.v03
             }
         }
 
+        public bool DeleteCustomer(int _Id)
+        {
+            try
+            {
+                database = new ShopContext();
+                var cust = database.Customer.First(x => x.Id == _Id);
+                database.Customer.Remove(cust);
+                database.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
+            }
+            finally
+            {
+                database.Dispose();
+            }
+        }
+
         public bool DeleteProvider(int _Id)
         {
             try
@@ -359,6 +411,90 @@ namespace Klient.v03
                 database = new ShopContext();
                 var prov = database.Provider.First(x => x.Id == _Id);
                 database.Provider.Remove(prov);
+                database.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
+            }
+            finally
+            {
+                database.Dispose();
+            }
+        }
+
+        public bool DeleteAccount(int _Id)
+        {
+            try
+            {
+                database = new ShopContext();
+                var acc = database.Account.First(x => x.Id == _Id);
+                database.Account.Remove(acc);
+                database.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
+            }
+            finally
+            {
+                database.Dispose();
+            }
+        }
+
+        public bool DeleteDelivery(int _Id)
+        {
+            try
+            {
+                database = new ShopContext();
+                var delivery = database.Delivery.First(x => x.Id == _Id);
+                database.Delivery.Remove(delivery);
+                database.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
+            }
+            finally
+            {
+                database.Dispose();
+            }
+        }
+
+        public bool DeleteDetail(int _id)
+        {
+            try
+            {
+                database = new ShopContext();
+                var detail = database.DeliveryDetail.First(x => x.Id == _id);
+                database.DeliveryDetail.Remove(detail);
+                database.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.EventLog.WriteEntry(e.Source, e.StackTrace, System.Diagnostics.EventLogEntryType.Warning);
+                return false;
+            }
+            finally
+            {
+                database.Dispose();
+            }
+        }
+
+        public bool DeleteOrder(int _id)
+        {
+            try
+            {
+                database = new ShopContext();
+                var ord = database.Order.First(x => x.ZamowienieId == _id);
+                database.Order.Remove(ord);
                 database.SaveChanges();
                 return true;
             }
@@ -508,9 +644,9 @@ namespace Klient.v03
         private void FilterProducts()
         {
             int idCat=0;
-            if (dataGridView2.CurrentRow.Cells[0] != null && (int)dataGridView2.CurrentRow.Cells[0].Value!=0)
+            if (dataGridView2.CurrentRow != null && (int)dataGridView2.CurrentRow.Cells[0].Value!=0)
             {
-                idCat = (int)dataGridView2.CurrentRow.Cells[0].Value;
+                idCat = (int)dataGridView2.SelectedCells[0].Value;
                 FillProductCat(idCat);
             }
             else
@@ -548,7 +684,7 @@ namespace Klient.v03
             }
             else
             {
-                MessageBox.Show("Wystąpił błąd z usunięciem kategorii");
+                MessageBox.Show("Wystąpił błąd z usunięciem dostawcy");
             }
         }
 
@@ -567,6 +703,269 @@ namespace Klient.v03
                 {
                     FillProviders();
                 }
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            FillAccounts();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            AddingAccWindow adding = new AddingAccWindow();
+            adding.ShowDialog();
+            if (adding.DialogResult == DialogResult.OK)
+            {
+                FillAccounts();
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+            ConfirmWindow confirm = new ConfirmWindow("Czy na pewno usunąć zaznaczone konto?");
+            confirm.ShowDialog();
+            if (confirm.DialogResult != DialogResult.Yes)
+            {
+                return;
+            }
+            if (dataGridView4.CurrentRow != null && info.privilages < 3 && (int)dataGridView4.CurrentRow.Cells[0].Value != info.id && (int)dataGridView4.CurrentRow.Cells[3].Value>=info.privilages)
+            {
+                MessageBox.Show("Masz za małe uprawnienia aby usunąć to konto");
+                return;
+            }
+            if (dataGridView4.CurrentRow != null && info.id == (int)dataGridView4.CurrentRow.Cells[0].Value && info.privilages == 3)
+            {
+                MessageBox.Show("Nie możesz usunąć swojego konta");
+                return;
+            }
+            if (dataGridView4.CurrentRow != null && DeleteAccount((int)dataGridView4.CurrentRow.Cells[0].Value))
+            {
+                dataGridView4.Rows.RemoveAt(dataGridView4.CurrentRow.Index);
+            }
+            else
+            {
+                MessageBox.Show("Wystąpił błąd z usunięciem konta");
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (dataGridView4.CurrentRow != null)
+            {
+                EditingAccWindow editing = new EditingAccWindow(dataGridView4.CurrentRow);
+                editing.ShowDialog();
+                if (editing.DialogResult == DialogResult.OK)
+                {
+                    FillAccounts();
+                }
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            AddingCustWindow customerAdd = new AddingCustWindow();
+            customerAdd.ShowDialog();
+            if (customerAdd.DialogResult == DialogResult.OK)
+            {
+                FillCustomers();
+            }
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            if (dataGridView6.CurrentRow != null)
+            {
+                EditingCustWindow editing = new EditingCustWindow(dataGridView6.CurrentRow);
+                editing.ShowDialog();
+
+                    if (editing.DialogResult == DialogResult.OK)
+                    {
+                        FillCustomers();
+                    }
+            }
+            else
+            {
+                MessageBox.Show("fuck3");
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            ConfirmWindow confirm = new ConfirmWindow("Czy na pewno usunąć zaznaczonego klienta?");
+            confirm.ShowDialog();
+            if (confirm.DialogResult != DialogResult.Yes)
+            {
+                return;
+            }
+            if (dataGridView6.CurrentRow != null && DeleteCustomer((int)dataGridView6.CurrentRow.Cells[0].Value))
+            {
+                dataGridView6.Rows.RemoveAt(dataGridView6.CurrentRow.Index);
+            }
+            else
+            {
+                MessageBox.Show("Wystąpił błąd z usunięciem klienta");
+            }
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            FillCustomers();
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            AddingDeliveryWindow adding = new AddingDeliveryWindow();
+            adding.ShowDialog();
+            if (adding.DialogResult == DialogResult.OK)
+            {
+                FillDeliveries();
+            }
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            if (dataGridView7.CurrentRow != null)
+            {
+                EditingDeliveryWindow adding = new EditingDeliveryWindow(dataGridView7.CurrentRow);
+                adding.ShowDialog();
+                if (adding.DialogResult == DialogResult.OK)
+                {
+                    FillDeliveries();
+                }
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            ConfirmWindow confirm = new ConfirmWindow("Czy na pewno usunąć zaznaczoną dostawę?");
+            confirm.ShowDialog();
+            if (confirm.DialogResult != DialogResult.Yes)
+            {
+                return;
+            }
+            if (dataGridView7.CurrentRow != null && DeleteDelivery((int)dataGridView7.CurrentRow.Cells[0].Value))
+            {
+                dataGridView7.Rows.RemoveAt(dataGridView7.CurrentRow.Index);
+            }
+            else
+            {
+                MessageBox.Show("Wystąpił błąd z usunięciem dostawy");
+            }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            FillDeliveries();
+
+        }
+
+        private void dataGridView7_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int deliveryId = 0;
+            if (dataGridView7.CurrentRow != null)
+            {
+                deliveryId = (int)dataGridView7.SelectedCells[0].Value;
+                FillDeliveryDetails(deliveryId);
+            }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FilterProducts();
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            if (dataGridView7.CurrentRow != null)
+            {
+                AddingDetailsWindow adding = new AddingDetailsWindow((int)dataGridView7.CurrentRow.Cells[0].Value);
+                adding.ShowDialog();
+                if (adding.DialogResult == DialogResult.OK)
+                {
+                    FillDeliveryDetails((int)dataGridView7.CurrentRow.Cells[0].Value);
+                }
+            }
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            ConfirmWindow confirm = new ConfirmWindow("Czy na pewno usunąć zaznaczony produkt z zaznaczonej dostawy?");
+            confirm.ShowDialog();
+            if (confirm.DialogResult != DialogResult.Yes)
+            {
+                return;
+            }
+            if (dataGridView7.CurrentRow != null && dataGridView8.CurrentRow != null && DeleteDetail((int)dataGridView8.CurrentRow.Cells[0].Value))
+            {
+                dataGridView8.Rows.RemoveAt(dataGridView8.CurrentRow.Index);
+            }
+            else
+            {
+                MessageBox.Show("Wystąpił błąd z usunięciem produktu z dostawy");
+            }
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView7.CurrentRow != null && dataGridView8.CurrentRow != null)
+            {
+                EditingDetailsWindow adding = new EditingDetailsWindow((int)dataGridView7.CurrentRow.Cells[0].Value, dataGridView8.CurrentRow);
+                adding.ShowDialog();
+                if (adding.DialogResult == DialogResult.OK)
+                {
+                    FillDeliveryDetails((int)dataGridView7.CurrentRow.Cells[0].Value);
+                }
+            }
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            FillOrders();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            AddingOrderWindow adding = new AddingOrderWindow();
+            adding.ShowDialog();
+            if (adding.DialogResult == DialogResult.OK)
+            {
+                FillOrders();
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (dataGridView3.CurrentRow != null)
+            {
+                EditingOrderWindow editing = new EditingOrderWindow(dataGridView3.CurrentRow);
+                editing.ShowDialog();
+                if (editing.DialogResult == DialogResult.OK)
+                {
+                    FillOrders();
+                }
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+            ConfirmWindow confirm = new ConfirmWindow("Czy na pewno usunąć zaznaczone zamówienie?");
+            confirm.ShowDialog();
+            if (confirm.DialogResult != DialogResult.Yes)
+            {
+                return;
+            }
+            if (dataGridView3.CurrentRow != null && DeleteOrder((int)dataGridView3.CurrentRow.Cells[0].Value))
+            {
+                dataGridView3.Rows.RemoveAt(dataGridView3.CurrentRow.Index);
+            }
+            else
+            {
+                MessageBox.Show("Wystąpił błąd z usunięciem zamówienia");
             }
         }
     }

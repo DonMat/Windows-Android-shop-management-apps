@@ -25,38 +25,5 @@ namespace Klient.v03
         public string Haslo { get; set; }
     
         public virtual ICollection<Customer> Customer { get; set; }
-
-        public Customer Customer1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public LoginWindow LoginWindow
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public Provider Provider
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
     }
 }

@@ -1,0 +1,1905 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DynamicHelp xmlns="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd">	
+   <LINKGROUP ID="Klient.v03" Title="Klient.v03 Reference Help" Priority="2100">
+      <GLYPH Expanded="vs:/ctxhelp_show.gif" Collapsed="vs:/ctxhelp_hide.gif"/>
+   </LINKGROUP>
+
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Account" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000005E.html" LinkGroup="Klient.v03">Account Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Account.Account" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000005F.html" LinkGroup="Klient.v03">Account Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Account" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000077.html" LinkGroup="Klient.v03">Account Property {Klient.v03.Customer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.Account" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000052.html" LinkGroup="Klient.v03">Account Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AccountInfo" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000001.html" LinkGroup="Klient.v03">AccountInfo Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingAccWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000002.html" LinkGroup="Klient.v03">AddingAccWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingAccWindow.AddingAccWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000003.html" LinkGroup="Klient.v03">AddingAccWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingCatWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000006.html" LinkGroup="Klient.v03">AddingCatWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingCatWindow.AddingCatWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000007.html" LinkGroup="Klient.v03">AddingCatWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingCustWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000009.html" LinkGroup="Klient.v03">AddingCustWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingCustWindow.AddingCustWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000000A.html" LinkGroup="Klient.v03">AddingCustWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingDeliveryWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000000C.html" LinkGroup="Klient.v03">AddingDeliveryWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingDeliveryWindow.AddingDeliveryWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000000E.html" LinkGroup="Klient.v03">AddingDeliveryWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingDetailsWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000000F.html" LinkGroup="Klient.v03">AddingDetailsWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingDetailsWindow.AddingDetailsWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000011.html" LinkGroup="Klient.v03">AddingDetailsWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingOrderWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000012.html" LinkGroup="Klient.v03">AddingOrderWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingOrderWindow.AddingOrderWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000013.html" LinkGroup="Klient.v03">AddingOrderWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingProvWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000016.html" LinkGroup="Klient.v03">AddingProvWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingProvWindow.AddingProvWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000017.html" LinkGroup="Klient.v03">AddingProvWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000019.html" LinkGroup="Klient.v03">AddingWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingWindow.AddingWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000001A.html" LinkGroup="Klient.v03">AddingWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Provider.Adres" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000B0.html" LinkGroup="Klient.v03">Adres Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.OrderDetail.AdresDostawy" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000096.html" LinkGroup="Klient.v03">AdresDostawy Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingAccWindow.CalculateMD5Hash" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000004.html" LinkGroup="Klient.v03">CalculateMD5Hash Method {Klient.v03.AddingAccWindow}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingAccWindow.CalculateMD5Hash" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000025.html" LinkGroup="Klient.v03">CalculateMD5Hash Method {Klient.v03.EditingAccWindow}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.LoginWindow.CalculateMD5Hash" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000042.html" LinkGroup="Klient.v03">CalculateMD5Hash Method {Klient.v03.LoginWindow}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Category" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000065.html" LinkGroup="Klient.v03">Category Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Category.Category" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000066.html" LinkGroup="Klient.v03">Category Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product.Category" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000A6.html" LinkGroup="Klient.v03">Category Property {Klient.v03.Product}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.Category" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000053.html" LinkGroup="Klient.v03">Category Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Price.Cena" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000009F.html" LinkGroup="Klient.v03">Cena Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Price.CenaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000009B.html" LinkGroup="Klient.v03">CenaId Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ConfirmWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000021.html" LinkGroup="Klient.v03">ConfirmWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ConfirmWindow.ConfirmWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000022.html" LinkGroup="Klient.v03">ConfirmWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000006A.html" LinkGroup="Klient.v03">Customer Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Customer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000006B.html" LinkGroup="Klient.v03">Customer Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Account.Customer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000064.html" LinkGroup="Klient.v03">Customer Property {Klient.v03.Account}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Order.Customer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000008F.html" LinkGroup="Klient.v03">Customer Property {Klient.v03.Order}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.Customer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000054.html" LinkGroup="Klient.v03">Customer Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Delivery.Data" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000007D.html" LinkGroup="Klient.v03">Data Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Order.DataZamowienia" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000008C.html" LinkGroup="Klient.v03">DataZamowienia Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Order.DataZrealizowania" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000008E.html" LinkGroup="Klient.v03">DataZrealizowania Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.MainWindow.DeleteAccount" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000048.html" LinkGroup="Klient.v03">DeleteAccount Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.MainWindow.DeleteCategory" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000045.html" LinkGroup="Klient.v03">DeleteCategory Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.MainWindow.DeleteCustomer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000046.html" LinkGroup="Klient.v03">DeleteCustomer Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.MainWindow.DeleteDelivery" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000049.html" LinkGroup="Klient.v03">DeleteDelivery Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.MainWindow.DeleteDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000004A.html" LinkGroup="Klient.v03">DeleteDetail Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.MainWindow.DeleteOrder" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000004B.html" LinkGroup="Klient.v03">DeleteOrder Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.MainWindow.DeleteProduct" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000004C.html" LinkGroup="Klient.v03">DeleteProduct Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.MainWindow.DeleteProvider" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000047.html" LinkGroup="Klient.v03">DeleteProvider Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Delivery" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000079.html" LinkGroup="Klient.v03">Delivery Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Delivery.Delivery" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000007A.html" LinkGroup="Klient.v03">Delivery Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.DeliveryDetail.Delivery" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000087.html" LinkGroup="Klient.v03">Delivery Property {Klient.v03.DeliveryDetail}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Provider.Delivery" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000B1.html" LinkGroup="Klient.v03">Delivery Property {Klient.v03.Provider}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.Delivery" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000055.html" LinkGroup="Klient.v03">Delivery Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.DeliveryDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000080.html" LinkGroup="Klient.v03">DeliveryDetail Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Delivery.DeliveryDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000007F.html" LinkGroup="Klient.v03">DeliveryDetail Property {Klient.v03.Delivery}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product.DeliveryDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000A7.html" LinkGroup="Klient.v03">DeliveryDetail Property {Klient.v03.Product}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.DeliveryDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000056.html" LinkGroup="Klient.v03">DeliveryDetail Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Price.Do" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000009E.html" LinkGroup="Klient.v03">Do Property {Klient.v03.Price}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Vat.Do" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000BB.html" LinkGroup="Klient.v03">Do Property {Klient.v03.Vat}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.DeliveryDetail.DostawaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000082.html" LinkGroup="Klient.v03">DostawaId Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Delivery.DostawcaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000007C.html" LinkGroup="Klient.v03">DostawcaId Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingAccWindow.EditAcc" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000026.html" LinkGroup="Klient.v03">EditAcc Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingWindow.EditAvail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000003F.html" LinkGroup="Klient.v03">EditAvail Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingCatWindow.EditCat" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000029.html" LinkGroup="Klient.v03">EditCat Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingCustWindow.EditCust" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000002C.html" LinkGroup="Klient.v03">EditCust Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingDeliveryWindow.EditDelivery" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000002F.html" LinkGroup="Klient.v03">EditDelivery Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingOrderWindow.EditDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000036.html" LinkGroup="Klient.v03">EditDetail Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingDetailsWindow.EditDetails" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000032.html" LinkGroup="Klient.v03">EditDetails Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingOrderWindow.EditOrder" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000035.html" LinkGroup="Klient.v03">EditOrder Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingWindow.EditPrice" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000003D.html" LinkGroup="Klient.v03">EditPrice Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingWindow.EditProduct" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000003C.html" LinkGroup="Klient.v03">EditProduct Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingProvWindow.EditProv" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000039.html" LinkGroup="Klient.v03">EditProv Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingWindow.EditVat" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000003E.html" LinkGroup="Klient.v03">EditVat Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingAccWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000023.html" LinkGroup="Klient.v03">EditingAccWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingAccWindow.EditingAccWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000024.html" LinkGroup="Klient.v03">EditingAccWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingCatWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000027.html" LinkGroup="Klient.v03">EditingCatWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingCatWindow.EditingCatWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000028.html" LinkGroup="Klient.v03">EditingCatWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingCustWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000002A.html" LinkGroup="Klient.v03">EditingCustWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingCustWindow.EditingCustWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000002B.html" LinkGroup="Klient.v03">EditingCustWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingDeliveryWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000002D.html" LinkGroup="Klient.v03">EditingDeliveryWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingDeliveryWindow.EditingDeliveryWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000002E.html" LinkGroup="Klient.v03">EditingDeliveryWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingDetailsWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000030.html" LinkGroup="Klient.v03">EditingDetailsWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingDetailsWindow.EditingDetailsWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000031.html" LinkGroup="Klient.v03">EditingDetailsWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingOrderWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000033.html" LinkGroup="Klient.v03">EditingOrderWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingOrderWindow.EditingOrderWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000034.html" LinkGroup="Klient.v03">EditingOrderWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingProvWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000037.html" LinkGroup="Klient.v03">EditingProvWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingProvWindow.EditingProvWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000038.html" LinkGroup="Klient.v03">EditingProvWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000003A.html" LinkGroup="Klient.v03">EditingWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.EditingWindow.EditingWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000003B.html" LinkGroup="Klient.v03">EditingWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Fax" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000076.html" LinkGroup="Klient.v03">Fax Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Account.Haslo" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000063.html" LinkGroup="Klient.v03">Haslo Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Account.Id" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000060.html" LinkGroup="Klient.v03">Id Property {Klient.v03.Account}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Category.Id" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000067.html" LinkGroup="Klient.v03">Id Property {Klient.v03.Category}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Id" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000006C.html" LinkGroup="Klient.v03">Id Property {Klient.v03.Customer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.DeliveryDetail.Id" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000081.html" LinkGroup="Klient.v03">Id Property {Klient.v03.DeliveryDetail}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Delivery.Id" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000007B.html" LinkGroup="Klient.v03">Id Property {Klient.v03.Delivery}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product.Id" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000A3.html" LinkGroup="Klient.v03">Id Property {Klient.v03.Product}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Provider.Id" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000AE.html" LinkGroup="Klient.v03">Id Property {Klient.v03.Provider}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Vat.Id" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000B8.html" LinkGroup="Klient.v03">Id Property {Klient.v03.Vat}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.OrderDetail.Ilosc" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000094.html" LinkGroup="Klient.v03">Ilosc Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Store.IloscDostepnych" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000B4.html" LinkGroup="Klient.v03">IloscDostepnych Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Store.IloscZamowionych" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000B5.html" LinkGroup="Klient.v03">IloscZamowionych Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Imie" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000006E.html" LinkGroup="Klient.v03">Imie Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingAccWindow.InsertNewAccount" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000005.html" LinkGroup="Klient.v03">InsertNewAccount Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingCatWindow.InsertNewCategory" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000008.html" LinkGroup="Klient.v03">InsertNewCategory Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingCustWindow.InsertNewCustomer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000000B.html" LinkGroup="Klient.v03">InsertNewCustomer Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingDeliveryWindow.InsertNewDelivery" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000000D.html" LinkGroup="Klient.v03">InsertNewDelivery Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingDetailsWindow.InsertNewDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000010.html" LinkGroup="Klient.v03">InsertNewDetail Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingOrderWindow.InsertNewOrder" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000014.html" LinkGroup="Klient.v03">InsertNewOrder Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingOrderWindow.InsertNewOrderDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000015.html" LinkGroup="Klient.v03">InsertNewOrderDetail Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingWindow.InsertNewPrice" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000001C_overloads--.html" LinkGroup="Klient.v03">InsertNewPrice Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingWindow.InsertNewPrice" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000001D_overloads--.html" LinkGroup="Klient.v03">InsertNewPrice Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingWindow.InsertNewProduct" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000001B.html" LinkGroup="Klient.v03">InsertNewProduct Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingProvWindow.InsertNewProvider" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000018.html" LinkGroup="Klient.v03">InsertNewProvider Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingWindow.InsertNewStore" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000020.html" LinkGroup="Klient.v03">InsertNewStore Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingWindow.InsertNewVat" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000001E_overloads--.html" LinkGroup="Klient.v03">InsertNewVat Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.AddingWindow.InsertNewVat" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000001F_overloads--.html" LinkGroup="Klient.v03">InsertNewVat Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product.KategoriaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000A5.html" LinkGroup="Klient.v03">KategoriaId Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000000.html" LinkGroup="Klient.v03">Klient.v03 Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03 Reference" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000BE.html" LinkGroup="Klient.v03">Klient.v03 Reference</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Order.KlientId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000008D.html" LinkGroup="Klient.v03">KlientId Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.KodPocztowy" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000073.html" LinkGroup="Klient.v03">KodPocztowy Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.OrderDetail.KodPocztowyDostawy" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000097.html" LinkGroup="Klient.v03">KodPocztowyDostawy Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.KontoId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000006D.html" LinkGroup="Klient.v03">KontoId Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.LoginWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000040.html" LinkGroup="Klient.v03">LoginWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.LoginWindow.LoginWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000041.html" LinkGroup="Klient.v03">LoginWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Mail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000074.html" LinkGroup="Klient.v03">Mail Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.MainWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000043.html" LinkGroup="Klient.v03">MainWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.MainWindow.MainWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000044.html" LinkGroup="Klient.v03">MainWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Miasto" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000072.html" LinkGroup="Klient.v03">Miasto Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.OrderDetail.MiastoDostawy" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000095.html" LinkGroup="Klient.v03">MiastoDostawy Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Category.Nazwa" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000068.html" LinkGroup="Klient.v03">Nazwa Property {Klient.v03.Category}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product.Nazwa" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000A4.html" LinkGroup="Klient.v03">Nazwa Property {Klient.v03.Product}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Provider.Nazwa" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000AF.html" LinkGroup="Klient.v03">Nazwa Property {Klient.v03.Provider}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Account.NazwaUzytkownika" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000062.html" LinkGroup="Klient.v03">NazwaUzytkownika Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Nazwisko" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000006F.html" LinkGroup="Klient.v03">Nazwisko Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.DeliveryDetail.Netto" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000084.html" LinkGroup="Klient.v03">Netto Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.NrDomu" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000071.html" LinkGroup="Klient.v03">NrDomu Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Price.Od" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000009D.html" LinkGroup="Klient.v03">Od Property {Klient.v03.Price}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Vat.Od" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000BA.html" LinkGroup="Klient.v03">Od Property {Klient.v03.Vat}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Order" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000089.html" LinkGroup="Klient.v03">Order Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Order.Order" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000008A.html" LinkGroup="Klient.v03">Order Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Order" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000078.html" LinkGroup="Klient.v03">Order Property {Klient.v03.Customer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.OrderDetail.Order" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000098.html" LinkGroup="Klient.v03">Order Property {Klient.v03.OrderDetail}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.Order" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000057.html" LinkGroup="Klient.v03">Order Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.OrderDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000091.html" LinkGroup="Klient.v03">OrderDetail Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Order.OrderDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000090.html" LinkGroup="Klient.v03">OrderDetail Property {Klient.v03.Order}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product.OrderDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000A8.html" LinkGroup="Klient.v03">OrderDetail Property {Klient.v03.Product}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.OrderDetail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000058.html" LinkGroup="Klient.v03">OrderDetail Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Price" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000009A.html" LinkGroup="Klient.v03">Price Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product.Price" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000A9.html" LinkGroup="Klient.v03">Price Property {Klient.v03.Product}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.Price" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000059.html" LinkGroup="Klient.v03">Price Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000A1.html" LinkGroup="Klient.v03">Product Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product.Product" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000A2.html" LinkGroup="Klient.v03">Product Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Category.Product" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000069.html" LinkGroup="Klient.v03">Product Property {Klient.v03.Category}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.DeliveryDetail.Product" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000088.html" LinkGroup="Klient.v03">Product Property {Klient.v03.DeliveryDetail}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.OrderDetail.Product" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000099.html" LinkGroup="Klient.v03">Product Property {Klient.v03.OrderDetail}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Price.Product" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000A0.html" LinkGroup="Klient.v03">Product Property {Klient.v03.Price}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.Product" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000005A.html" LinkGroup="Klient.v03">Product Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Store.Product" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000B6.html" LinkGroup="Klient.v03">Product Property {Klient.v03.Store}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Vat.Product" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000BD.html" LinkGroup="Klient.v03">Product Property {Klient.v03.Vat}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.DeliveryDetail.ProduktId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000083.html" LinkGroup="Klient.v03">ProduktId Property {Klient.v03.DeliveryDetail}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.OrderDetail.ProduktId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000093.html" LinkGroup="Klient.v03">ProduktId Property {Klient.v03.OrderDetail}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Price.ProduktId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000009C.html" LinkGroup="Klient.v03">ProduktId Property {Klient.v03.Price}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Store.ProduktId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000B3.html" LinkGroup="Klient.v03">ProduktId Property {Klient.v03.Store}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Vat.ProduktId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000B9.html" LinkGroup="Klient.v03">ProduktId Property {Klient.v03.Vat}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Provider" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000AC.html" LinkGroup="Klient.v03">Provider Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Provider.Provider" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000AD.html" LinkGroup="Klient.v03">Provider Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Delivery.Provider" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000007E.html" LinkGroup="Klient.v03">Provider Property {Klient.v03.Delivery}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.Provider" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000005B.html" LinkGroup="Klient.v03">Provider Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.RegisterWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000004E.html" LinkGroup="Klient.v03">RegisterWindow Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.RegisterWindow.RegisterWindow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000004F.html" LinkGroup="Klient.v03">RegisterWindow Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000050.html" LinkGroup="Klient.v03">ShopContext Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.ShopContext" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000051.html" LinkGroup="Klient.v03">ShopContext Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Store" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000B2.html" LinkGroup="Klient.v03">Store Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product.Store" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000AA.html" LinkGroup="Klient.v03">Store Property {Klient.v03.Product}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.Store" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000005C.html" LinkGroup="Klient.v03">Store Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.DeliveryDetail.Sztuk" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000085.html" LinkGroup="Klient.v03">Sztuk Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Telefon" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000075.html" LinkGroup="Klient.v03">Telefon Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Customer.Ulica" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000070.html" LinkGroup="Klient.v03">Ulica Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Account.Uprawnienia" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000061.html" LinkGroup="Klient.v03">Uprawnienia Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Vat" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000B7.html" LinkGroup="Klient.v03">Vat Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.DeliveryDetail.Vat" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000086.html" LinkGroup="Klient.v03">Vat Property {Klient.v03.DeliveryDetail}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Product.Vat" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000AB.html" LinkGroup="Klient.v03">Vat Property {Klient.v03.Product}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.ShopContext.Vat" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000005D.html" LinkGroup="Klient.v03">Vat Property {Klient.v03.ShopContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Vat.WartoscVat" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_00000000000000BC.html" LinkGroup="Klient.v03">WartoscVat Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.OrderDetail.ZamowienieId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_0000000000000092.html" LinkGroup="Klient.v03">ZamowienieId Property {Klient.v03.OrderDetail}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Klient.v03.Order.ZamowienieId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Klient.v03.chm::/topic_000000000000008B.html" LinkGroup="Klient.v03">ZamowienieId Property {Klient.v03.Order}</LItem>
+      </Links>
+   </Context>
+   
+
+</DynamicHelp>
+

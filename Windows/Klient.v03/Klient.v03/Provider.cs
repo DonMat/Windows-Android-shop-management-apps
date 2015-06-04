@@ -24,16 +24,5 @@ namespace Klient.v03
         public string Adres { get; set; }
     
         public virtual ICollection<Delivery> Delivery { get; set; }
-
-        public Delivery Delivery1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
     }
 }
